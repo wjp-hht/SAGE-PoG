@@ -1,0 +1,17 @@
+Third-party data notice
+========================
+
+The question set used in this work is derived from ComplexWebQuestions:
+
+    Talmor A, Berant J. The Web as a Knowledge-Base for Answering Complex
+    Questions. In: Proceedings of the 2018 Conference of the North American
+    Chapter of the Association for Computational Linguistics (NAACL); 2018.
+    p. 641-651.
+
+Please refer to the original release for its license and terms of use.
+The domain subgraphs are subsets of Freebase:
+
+    Bollacker K, Evans C, Paritosh P, Sturge T, Taylor J. Freebase: A
+    Collaboratively Created Graph Database for Structuring Human Knowledge.
+    In: Proceedings of the 2008 ACM SIGMOD International Conference on
+    Management of Data; 2008. p. 1247-1250.

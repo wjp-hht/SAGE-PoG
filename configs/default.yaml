@@ -1,0 +1,11 @@
+# SAGE-PoG default configuration
+llm:
+  base_url: ${LLM_BASE_URL:-http://localhost:11434/v1}
+  api_key: ${LLM_API_KEY:-ollama}
+  model: ${LLM_MODEL:-qwen3:32b}
+  max_context: 32768
+exploration:
+  K: 10            # Top-K candidate relations after pre-filtering
+  d_min: 2         # minimum exploration depth before early stopping
+  max_depth: 3
+  beam_width: 10

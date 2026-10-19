@@ -1,0 +1,2376 @@
+{
+  "experiment_time": "2026-05-17 19:05:25",
+  "dataset": "/opt/notebook/workspace/pog_exp/experiment_questions.json",
+  "sample_size": 25,
+  "max_depth": 3,
+  "results": {
+    "D_双模块全开": {
+      "config": {
+        "name": "D_双模块全开",
+        "desc": "PoG + 关系筛选与知识判断同时启用",
+        "filter": true,
+        "judge": true,
+        "llm_filter": true,
+        "llm_judge": true
+      },
+      "stats": {
+        "total": 25,
+        "success": 7,
+        "success_rate": 28.0,
+        "strict_hits_at_1": 28.0,
+        "answerable_rate": null,
+        "has_gold_count": 25,
+        "kg_supported_success_rate": 28.0,
+        "kg_path_coverage": 100.0,
+        "avg_hop": 2.88,
+        "avg_entity": 6.8,
+        "avg_relation": 15.4,
+        "avg_time": 392.15,
+        "early_stop_count": 0,
+        "error_count": 0,
+        "timeout_count": 0,
+        "llm_calls": 336
+      },
+      "details": [
+        {
+          "success": false,
+          "hop": 3,
+          "entity_count": 11,
+          "relation_count": 28,
+          "early_stop": false,
+          "time": 482.19,
+          "pred_answer": "Battle of Saratoga",
+          "gold_answer": "Battle of the Clouds",
+          "answer_in_graph": false,
+          "d_predict": 2,
+          "run_depth": 3,
+          "planning": {
+            "d_predict": 2,
+            "sub_questions": [
+              "battles in the war in",
+              "George Washington is associated ended",
+              "September 11, 1777?"
+            ],
+            "topic_entities_ordered": [
+              "m.034rd"
+            ],
+            "indicator_text": "\"m.034rd\" — toward: Which battles in the war in which George Washington is associated ended after September 11, 1777?",
+            "planning_text": "battles in the war in -> George Washington is associated ended -> September 11, 1777?",
+            "planning_source": "rule"
+          },
+          "phase_stats": [
+            {
+              "phase": "subgraph",
+              "nodes": 632,
+              "edges": 6797,
+              "elapsed": 0.27
+            },
+            {
+              "phase": "topic_path",
+              "depth": 2,
+              "raw_paths": 896,
+              "pruned_paths": 3,
+              "sufficient": false,
+              "elapsed": 0.0
+            },
+            {
+              "phase": "topic_path",
+              "depth": 3,
+              "raw_paths": 89538,
+              "pruned_paths": 3,
+              "sufficient": false,
+              "elapsed": 0.18
+            },
+            {
+              "phase": "supplement",
+              "predictions": 3,
+              "elapsed": 173.91
+            },
+            {
+              "phase": "node_expand",
+              "new_paths": 320,
+              "elapsed": 30.2
+            }
+          ],
+          "top_paths_text": [
+            [
+              "{m/034rd} ← symbols.namesake.named_after ← {m/0cv1h} → location.location.events → {m/02p037} → base.americancivilwar.battle.military_units_involved_in_this_conflict → {m/0hpxgk6}",
+              0.3333333333333333
+            ],
+            [
+              "{m/034rd} ← symbols.namesake.named_after ← {m/0cv1h} ← time.event.locations ← {m/02p037} → base.americancivilwar.battle.military_units_involved_in_this_conflict → {m/0hpxgk6}",
+              0.3333333333333333
+            ],
+            [
+              "{m/034rd} → visual_art.art_subject.artwork_on_the_subject → {m/06_5kct} → common.topic.notable_types → {m/01y2hcq}",
+              0.11764705882352941
+            ],
+            [
+              "{m/034rd} → visual_art.art_subject.artwork_on_the_subject → {m/06_5kct} → common.topic.notable_for → {g.125517h58}",
+              0.11764705882352941
+            ],
+            [
+              "{m/034rd} → visual_art.art_subject.artwork_on_the_subject → {m/06_pl4c} → common.topic.notable_types → {m/01y2hcq}",
+              0.11764705882352941
+            ],
+            [
+              "{m/034rd} → visual_art.art_subject.artwork_on_the_subject → {m/05hc09} → visual_art.artwork.art_subject → {m/04zy_w3} ← base.yupgrade.user.topics ← {m/07c_tvf}",
+              0.11764705882352941
+            ],
+            [
+              "{m/034rd} → visual_art.art_subject.artwork_on_the_subject → {m/05hc09} → visual_art.artwork.art_subject → {m/034rd} → visual_art.art_subject.artwork_on_the_subject → {m/06_5kct}",
+              0.11764705882352941
+            ],
+            [
+              "{m/034rd} → visual_art.art_subject.artwork_on_the_subject → {m/05hc09} → visual_art.artwork.art_subject → {m/034rd} → visual_art.art_subject.artwork_on_the_subject → {m/0swnxdg}",
+              0.11764705882352941
+            ],
+            [
+              "{m/034rd} → visual_art.art_subject.artwork_on_the_subject → {m/05hc09} → visual_art.artwork.art_subject → {m/04zy_w3} ← base.yupgrade.user.topics ← {m/07c_tvf} → base.yupgrade.user.topics → {m/02x3kph}",
+              0.11764705882352941
+            ],
+            [
+              "{m/034rd} → visual_art.art_subject.artwork_on_the_subject → {m/05hc09} → visual_art.artwork.art_subject → {m/04zy_w3} ← base.yupgrade.user.topics ← {m/07c_tvf} → base.yupgrade.user.topics → {m/0p8rg}",
+              0.11764705882352941
+            ]
+          ],
+          "error": null,
+          "question": "Which battles in the war in which George Washington is associated ended after September 11, 1777?",
+          "id": "WebQTrn-478_4a46a1390870e3507418fb7b911a787f",
+          "idx": 1
+        },
+        {
+          "success": true,
+          "hop": 3,
+          "entity_count": 5,
+          "relation_count": 14,
+          "early_stop": false,
+          "time": 323.87,
+          "pred_answer": "Kazakhstan",
+          "gold_answer": "Belarus",
+          "answer_in_graph": false,
+          "d_predict": 2,
+          "run_depth": 3,
+          "planning": {
+            "d_predict": 2,
+            "sub_questions": [
+              "What countries border a military combatant involved in the Battle of Kulikovo?"
+            ],
+            "topic_entities_ordered": [
+              "m.01975w",
+              "m.01mp"
+            ],
+            "indicator_text": "\"m.01975w\" - \"m.01mp\" — toward: What countries border a military combatant involved in the Battle of Kulikovo?",
+            "planning_text": "What countries border a military combatant involved in the Battle of Kulikovo?",
+            "planning_source": "rule"
+          },
+          "phase_stats": [
+            {
+              "phase": "subgraph",
+              "nodes": 20,
+              "edges": 72,
+              "elapsed": 0.09
+            },
+            {
+              "phase": "topic_path",
+              "depth": 2,
+              "raw_paths": 35,
+              "pruned_paths": 3,
+              "sufficient": false,
+              "elapsed": 0.0
+            },
+            {
+              "phase": "topic_path",
+              "depth": 3,
+              "raw_paths": 215,
+              "pruned_paths": 3,
+              "sufficient": false,
+              "elapsed": 0.0
+            },
+            {
+              "phase": "supplement",
+              "predictions": 3,
+              "elapsed": 17.45
+            },
+            {
+              "phase": "node_expand",
+              "new_paths": 0,
+              "elapsed": 0.0
+            }
+          ],
+          "top_paths_text": [
+            [
+              "{m/01975w} → military.military_conflict.combatants → {m/04fvcy4} ← military.military_conflict.combatants ← {m/01975w}",
+              0.1875
+            ],
+            [
+              "{m/01975w} ← military.military_combatant_group.conflict ← {m/04fvcy4} ← military.military_conflict.combatants ← {m/01975w}",
+              0.1875
+            ],
+            [
+              "{m/01975w} ← military.military_combatant_group.conflict ← {m/04lml8r} ← military.military_conflict.combatants ← {m/01975w}",
+              0.1875
+            ],
+            [
+              "{m/01975w} → military.military_conflict.combatants → {m/04fvcy4} → military.military_combatant_group.conflict → {m/01975w} → military.military_conflict.combatants → {m/04lml8r}",
+              0.1875
+            ],
+            [
+              "{m/01975w} → military.military_conflict.combatants → {m/04lml8r} → military.military_combatant_group.conflict → {m/01975w} → military.military_conflict.combatants → {m/04fvcy4}",
+              0.1875
+            ],
+            [
+              "{m/01975w} → military.military_conflict.combatants → {m/04lml8r} → military.military_combatant_group.conflict → {m/01975w} ← military.military_combatant_group.conflict ← {m/04fvcy4}",
+              0.1875
+            ],
+            [
+              "{pseudo_start} → 09c7w0 → {pseudo_end}",
+              0.1
+            ],
+            [
+              "{pseudo_start} → 02mjmr → {pseudo_end}",
+              0.1
+            ]
+          ],
+          "error": null,
+          "question": "What countries border a military combatant involved in the Battle of Kulikovo?",
+          "id": "WebQTest-282_4bedefa2f2f0c2843bcf7407cd03420c",
+          "idx": 2
+        },
+        {
+          "success": false,
+          "hop": 2,
+          "entity_count": 5,
+          "relation_count": 6,
+          "early_stop": false,
+          "time": 160.56,
+          "pred_answer": "Portugal",
+          "gold_answer": "France",
+          "answer_in_graph": false,
+          "d_predict": 2,
+          "run_depth": 3,
+          "planning": {
+            "d_predict": 2,
+            "sub_questions": [
+              "What country was involved in the Battle of Talavera",
+              "borders Spain?"
+            ],
+            "topic_entities_ordered": [
+              "m.06mkj",
+              "m.01mp",
+              "m.03jyvj"
+            ],
+            "indicator_text": "\"m.06mkj\" - \"m.01mp\" - \"m.03jyvj\" — toward: What country was involved in the Battle of Talavera and borders Spain?",
+            "planning_text": "What country was involved in the Battle of Talavera -> borders Spain?",
+            "planning_source": "rule"
+          },
+          "phase_stats": [
+            {
+              "phase": "subgraph",
+              "nodes": 180,
+              "edges": 3749,
+              "elapsed": 0.35
+            },
+            {
+              "phase": "topic_path",
+              "depth": 2,
+              "raw_paths": 206,
+              "pruned_paths": 3,
+              "sufficient": true,
+              "elapsed": 0.0
+            }
+          ],
+          "top_paths_text": [
+            [
+              "{m/03jyvj} → base.culturalevent.event.entity_involved → {m/01flgk} → common.topic.notable_types → {m/01mp}",
+              0.17647058823529413
+            ],
+            [
+              "{m/03jyvj} → base.culturalevent.event.entity_involved → {m/07ssc} → location.country.languages_spoken → {m/01v0g}",
+              0.17647058823529413
+            ],
+            [
+              "{m/06mkj} ← location.postal_code.country ← {m/0jnxsvy} → location.postal_code.country → {m/06mkj}",
+              0.17647058823529413
+            ]
+          ],
+          "error": null,
+          "question": "What country was involved in the Battle of Talavera and borders Spain?",
+          "id": "WebQTest-341_4af7db3ff802f58fb81086fed8bc2e8a",
+          "idx": 3
+        },
+        {
+          "success": false,
+          "hop": 3,
+          "entity_count": 9,
+          "relation_count": 21,
+          "early_stop": false,
+          "time": 504.46,
+          "pred_answer": "Soviet Union",
+          "gold_answer": "Cuba",
+          "answer_in_graph": false,
+          "d_predict": 3,
+          "run_depth": 3,
+          "planning": {
+            "d_predict": 3,
+            "sub_questions": [
+              "What is the country with the largest army",
+              "is where Cuban Missile Crisis occurred?"
+            ],
+            "topic_entities_ordered": [
+              "m.01zxx"
+            ],
+            "indicator_text": "\"m.01zxx\" — toward: What is the country with the largest army and is where Cuban Missile Crisis occurred?",
+            "planning_text": "What is the country with the largest army -> is where Cuban Missile Crisis occurred?",
+            "planning_source": "rule"
+          },
+          "phase_stats": [
+            {
+              "phase": "subgraph",
+              "nodes": 165,
+              "edges": 1276,
+              "elapsed": 0.17
+            },
+            {
+              "phase": "topic_path",
+              "depth": 3,
+              "raw_paths": 3962,
+              "pruned_paths": 3,
+              "sufficient": false,
+              "elapsed": 0.01
+            },
+            {
+              "phase": "supplement",
+              "predictions": 3,
+              "elapsed": 180.98
+            },
+            {
+              "phase": "node_expand",
+              "new_paths": 8,
+              "elapsed": 67.63
+            }
+          ],
+          "top_paths_text": [
+            [
+              "{m/01zxx} → time.event.locations → {m/0d04z6} ← location.administrative_division.country ← {m/01rj2y} → location.location.containedby → {m/0kf9zjj}",
+              0.1875
+            ],
+            [
+              "{m/01zxx} → time.event.locations → {m/0d04z6} ← location.administrative_division.country ← {m/01rj2y} ← time.event.locations ← {m/010bgqt3}",
+              0.1875
+            ],
+            [
+              "{m/01zxx} → time.event.locations → {m/0d04z6} ← location.administrative_division.country ← {m/01rj2y} ← location.location.containedby ← {m/03c93nb}",
+              0.1875
+            ],
+            [
+              "{m/01zxx} → time.event.locations → {m/0d04z6} ← location.administrative_division.country ← {m/01rj2y} ← time.event.locations ← {m/010bgqt3} → film.film_festival_event.festival → {m/0289093}",
+              0.1875
+            ],
+            [
+              "{m/01zxx} → time.event.locations → {m/0d04z6} ← location.administrative_division.country ← {m/01rj2y} ← time.event.locations ← {m/010bgqt3} → time.event.instance_of_recurring_event → {m/0289093}",
+              0.1875
+            ],
+            [
+              "{m/01zxx} → time.event.locations → {m/0d04z6} ← location.administrative_division.country ← {m/01rj2y} ← time.event.locations ← {m/010bgqt3} ← time.recurring_event.instances ← {m/0289093}",
+              0.1875
+            ],
+            [
+              "{pseudo_start} → 01rj2y (Cuba's administrative division) → {pseudo_end}",
+              0.1
+            ],
+            [
+              "{pseudo_start} → 01rj2y (Cuba) → {pseudo_end}",
+              0.1
+            ],
+            [
+              "{pseudo_start} → 021bln (China) → {pseudo_end}",
+              0.1
+            ],
+            [
+              "{m/01zxx} → time.event.locations → {m/0d04z6} ← location.mailing_address.country ← {m/010ljlnk} → location.mailing_address.country → {m/021bln}",
+              0.0
+            ]
+          ],
+          "error": null,
+          "question": "What is the country with the largest army and is where Cuban Missile Crisis occurred?",
+          "id": "WebQTrn-1129_d357420d9ba1883236aa66fe0cfea6cc",
+          "idx": 4
+        },
+        {
+          "success": true,
+          "hop": 3,
+          "entity_count": 7,
+          "relation_count": 12,
+          "early_stop": false,
+          "time": 480.17,
+          "pred_answer": "World War I",
+          "gold_answer": "Attack on Orleans",
+          "answer_in_graph": false,
+          "d_predict": 3,
+          "run_depth": 3,
+          "planning": {
+            "d_predict": 3,
+            "sub_questions": [
+              "During what war that ended",
+              "April 21, 1914 was Woodrow Wilson president?"
+            ],
+            "topic_entities_ordered": [
+              "m.083q7",
+              "m.060c4",
+              "m.02h76fz",
+              "m.09c7w0"
+            ],
+            "indicator_text": "\"m.083q7\" - \"m.060c4\" - \"m.02h76fz\" - \"m.09c7w0\" — toward: During what war that ended after April 21, 1914 was Woodrow Wilson president?",
+            "planning_text": "During what war that ended -> April 21, 1914 was Woodrow Wilson president?",
+            "planning_source": "rule"
+          },
+          "phase_stats": [
+            {
+              "phase": "subgraph",
+              "nodes": 8464,
+              "edges": 62700,
+              "elapsed": 3.37
+            },
+            {
+              "phase": "topic_path",
+              "depth": 3,
+              "raw_paths": 8706148,
+              "pruned_paths": 3,
+              "sufficient": false,
+              "elapsed": 35.75
+            },
+            {
+              "phase": "supplement",
+              "predictions": 3,
+              "elapsed": 35.74
+            },
+            {
+              "phase": "node_expand",
+              "new_paths": 5,
+              "elapsed": 68.42
+            }
+          ],
+          "top_paths_text": [
+            [
+              "{m/060c4} ← base.yupgrade.user.topics ← {m/075_7tf} → base.yupgrade.user.topics → {m/081pw} → base.morelaw.war.peace_treaty → {m/01kbv2}",
+              0.15789473684210525
+            ],
+            [
+              "{m/060c4} ← base.yupgrade.user.topics ← {m/075_7tf} → base.yupgrade.user.topics → {m/081pw} → base.morelaw.war.peace_treaty → {m/062gqv}",
+              0.15789473684210525
+            ],
+            [
+              "{m/060c4} ← base.yupgrade.user.topics ← {m/075_7tf} → base.yupgrade.user.topics → {m/083q7} → people.person.place_of_birth → {m/034lk7}",
+              0.15789473684210525
+            ],
+            [
+              "{m/060c4} ← base.yupgrade.user.topics ← {m/075_7tf} → base.yupgrade.user.topics → {m/081pw} → base.morelaw.war.peace_treaty → {m/062gqv} → base.morelaw.peace_treaty.ends_war → {m/04cy8_l}",
+              0.15789473684210525
+            ],
+            [
+              "{m/060c4} ← base.yupgrade.user.topics ← {m/075_7tf} → base.yupgrade.user.topics → {m/081pw} → base.morelaw.war.peace_treaty → {m/01kbv2} → common.topic.notable_for → {g.1yl5s0p1y}",
+              0.15789473684210525
+            ],
+            [
+              "{m/060c4} ← base.yupgrade.user.topics ← {m/075_7tf} → base.yupgrade.user.topics → {m/081pw} → base.morelaw.war.peace_treaty → {m/01kbv2} → common.topic.notable_types → {m/0ds9lks}",
+              0.15789473684210525
+            ],
+            [
+              "{pseudo_start} → 04cy8_l → {pseudo_end}",
+              0.1
+            ],
+            [
+              "{pseudo_start} → 083q7 → {pseudo_end}",
+              0.1
+            ]
+          ],
+          "error": null,
+          "question": "During what war that ended after April 21, 1914 was Woodrow Wilson president?",
+          "id": "WebQTrn-2707_bebc50d8b3d6e7057d9f54840a212304",
+          "idx": 5
+        },
+        {
+          "success": true,
+          "hop": 3,
+          "entity_count": 7,
+          "relation_count": 18,
+          "early_stop": false,
+          "time": 471.12,
+          "pred_answer": "Cuba",
+          "gold_answer": "Caribbean Sea",
+          "answer_in_graph": false,
+          "d_predict": 3,
+          "run_depth": 3,
+          "planning": {
+            "d_predict": 3,
+            "sub_questions": [
+              "What was the location of the war in",
+              "Cuba was involved?"
+            ],
+            "topic_entities_ordered": [
+              "m.0d04z6"
+            ],
+            "indicator_text": "\"m.0d04z6\" — toward: What was the location of the war in which Cuba was involved?",
+            "planning_text": "What was the location of the war in -> Cuba was involved?",
+            "planning_source": "rule"
+          },
+          "phase_stats": [
+            {
+              "phase": "subgraph",
+              "nodes": 319,
+              "edges": 4732,
+              "elapsed": 0.14
+            },
+            {
+              "phase": "topic_path",
+              "depth": 3,
+              "raw_paths": 52037,
+              "pruned_paths": 3,
+              "sufficient": false,
+              "elapsed": 0.08
+            },
+            {
+              "phase": "supplement",
+              "predictions": 3,
+              "elapsed": 188.34
+            },
+            {
+              "phase": "node_expand",
+              "new_paths": 26,
+              "elapsed": 40.55
+            }
+          ],
+          "top_paths_text": [
+            [
+              "{m/0d04z6} ← location.location.containedby ← {m/0g8pd1} → location.location.containedby → {m/0d04z6} ← location.location.containedby ← {m/0c9ktk}",
+              1.0
+            ],
+            [
+              "{m/0d04z6} ← location.location.containedby ← {m/0c1mr9} → location.location.containedby → {m/0d04z6} ← location.location.containedby ← {m/0g8pd1}",
+              1.0
+            ],
+            [
+              "{m/0d04z6} ← location.location.containedby ← {m/0c1mr9} → location.location.containedby → {m/0d04z6} ← location.location.containedby ← {m/03cbhxn}",
+              1.0
+            ],
+            [
+              "{m/0d04z6} ← location.location.containedby ← {m/0c1mr9} → location.location.containedby → {m/0d04z6} ← location.location.containedby ← {m/0c9ktk}",
+              1.0
+            ],
+            [
+              "{m/0d04z6} ← location.location.containedby ← {m/03cbhxn} → location.location.containedby → {m/0d04z6} ← location.location.containedby ← {m/0g8pd1}",
+              1.0
+            ],
+            [
+              "{m/0d04z6} ← location.location.containedby ← {m/03cbhxn} → location.location.containedby → {m/0d04z6} ← location.location.containedby ← {m/0c1mr9}",
+              1.0
+            ],
+            [
+              "{m/0d04z6} ← location.location.containedby ← {m/03cbhxn} → location.location.containedby → {m/0d04z6} ← location.location.containedby ← {m/01rj2y}",
+              1.0
+            ],
+            [
+              "{m/0d04z6} ← location.location.containedby ← {m/0g8pd1} → location.location.containedby → {m/0d04z6} ← location.location.containedby ← {m/0c1mr9}",
+              0.23076923076923078
+            ],
+            [
+              "{m/0d04z6} ← location.location.containedby ← {m/0g8pd1} → location.location.containedby → {m/0d04z6} ← location.location.containedby ← {m/03cbhxn}",
+              0.23076923076923078
+            ],
+            [
+              "{m/0d04z6} ← location.location.containedby ← {m/0g8pd1} → location.location.containedby → {m/0d04z6} ← location.administrative_division.country ← {m/01rj2y}",
+              0.23076923076923078
+            ]
+          ],
+          "error": null,
+          "question": "What was the location of the war in which Cuba was involved?",
+          "id": "WebQTrn-1129_80baecbf1d8d56a88084223c41a09227",
+          "idx": 6
+        },
+        {
+          "success": false,
+          "hop": 3,
+          "entity_count": 8,
+          "relation_count": 22,
+          "early_stop": false,
+          "time": 440.13,
+          "pred_answer": "m/015qh",
+          "gold_answer": "Germany",
+          "answer_in_graph": false,
+          "d_predict": 2,
+          "run_depth": 3,
+          "planning": {
+            "d_predict": 2,
+            "sub_questions": [
+              "What country is a member of NATO",
+              "home to V Bird airline?"
+            ],
+            "topic_entities_ordered": [
+              "m.059dn",
+              "m.05zbq0"
+            ],
+            "indicator_text": "\"m.059dn\" - \"m.05zbq0\" — toward: What country is a member of NATO and home to V Bird airline?",
+            "planning_text": "What country is a member of NATO -> home to V Bird airline?",
+            "planning_source": "rule"
+          },
+          "phase_stats": [
+            {
+              "phase": "subgraph",
+              "nodes": 966,
+              "edges": 7461,
+              "elapsed": 0.53
+            },
+            {
+              "phase": "topic_path",
+              "depth": 2,
+              "raw_paths": 1070,
+              "pruned_paths": 3,
+              "sufficient": false,
+              "elapsed": 0.0
+            },
+            {
+              "phase": "topic_path",
+              "depth": 3,
+              "raw_paths": 9684,
+              "pruned_paths": 3,
+              "sufficient": false,
+              "elapsed": 0.04
+            },
+            {
+              "phase": "supplement",
+              "predictions": 3,
+              "elapsed": 181.1
+            },
+            {
+              "phase": "node_expand",
+              "new_paths": 3,
+              "elapsed": 14.93
+            }
+          ],
+          "top_paths_text": [
+            [
+              "{m/059dn} → organization.membership_organization.members → {m/03wyt_4} → organization.organization_membership.member → {m/015qh} ← location.administrative_division.country ← {m/02sys3}",
+              1.0
+            ],
+            [
+              "{m/059dn} → user.ktrueman.default_domain.international_organization.member_states → {m/015qh} ← location.postal_code.country ← {m/0w5fgcf} → location.postal_code.country → {m/0jxd74r}",
+              1.0
+            ],
+            [
+              "{m/059dn} → organization.membership_organization.members → {m/03wyt_4} → organization.organization_membership.member → {m/015qh} ← location.postal_code.country ← {m/0w5fgcf}",
+              1.0
+            ],
+            [
+              "{m/059dn} → user.ktrueman.default_domain.international_organization.member_states → {m/015qh} ← location.administrative_division.country ← {m/0ftjx} ← tv.tv_program.country_of_origin ← {m/0glsdqx}",
+              1.0
+            ],
+            [
+              "{m/059dn} → user.ktrueman.default_domain.international_organization.member_states → {m/015qh} ← location.administrative_division.country ← {m/0nh2mhs} → common.topic.notable_for → {g.125by4fx3}",
+              1.0
+            ],
+            [
+              "{m/059dn} → user.ktrueman.default_domain.international_organization.member_states → {m/015qh} ← location.administrative_division.country ← {m/0nh2mhs} → location.location.contains → {m/05b27p9}",
+              1.0
+            ],
+            [
+              "{m/059dn} → organization.membership_organization.members → {m/03wyt_4} → organization.organization_membership.member → {m/015qh} ← location.postal_code.country ← {m/0w5f9_6}",
+              0.23529411764705882
+            ],
+            [
+              "{m/059dn} → organization.membership_organization.members → {m/03wyt_4} → organization.organization_membership.member → {m/015qh} ← location.administrative_division.country ← {m/0ftjx}",
+              0.23529411764705882
+            ],
+            [
+              "{m/059dn} → organization.membership_organization.members → {m/03wyt_4} → organization.organization_membership.member → {m/015qh} ← location.postal_code.country ← {m/0wr427c}",
+              0.23529411764705882
+            ],
+            [
+              "{m/059dn} → organization.membership_organization.members → {m/03wyt_4} → organization.organization_membership.member → {m/015qh} ← location.administrative_division.country ← {m/0ftjx} ← tv.tv_program.country_of_origin ← {m/0glsdqx}",
+              0.23529411764705882
+            ]
+          ],
+          "error": null,
+          "question": "What country is a member of NATO and home to V Bird airline?",
+          "id": "WebQTrn-1804_e0133b074487245b89f042f1b8e39568",
+          "idx": 7
+        },
+        {
+          "success": false,
+          "hop": 3,
+          "entity_count": 10,
+          "relation_count": 18,
+          "early_stop": false,
+          "time": 505.84,
+          "pred_answer": "Slovakia",
+          "gold_answer": "Bulgaria",
+          "answer_in_graph": false,
+          "d_predict": 2,
+          "run_depth": 3,
+          "planning": {
+            "d_predict": 2,
+            "sub_questions": [
+              "Nato country has the largest calling code?"
+            ],
+            "topic_entities_ordered": [
+              "m.059dn"
+            ],
+            "indicator_text": "\"m.059dn\" — toward: Which Nato country has the largest calling code?",
+            "planning_text": "Nato country has the largest calling code?",
+            "planning_source": "rule"
+          },
+          "phase_stats": [
+            {
+              "phase": "subgraph",
+              "nodes": 1672,
+              "edges": 19349,
+              "elapsed": 0.85
+            },
+            {
+              "phase": "topic_path",
+              "depth": 2,
+              "raw_paths": 1897,
+              "pruned_paths": 3,
+              "sufficient": false,
+              "elapsed": 0.0
+            },
+            {
+              "phase": "topic_path",
+              "depth": 3,
+              "raw_paths": 35129,
+              "pruned_paths": 3,
+              "sufficient": false,
+              "elapsed": 0.09
+            },
+            {
+              "phase": "supplement",
+              "predictions": 3,
+              "elapsed": 196.06
+            },
+            {
+              "phase": "node_expand",
+              "new_paths": 16,
+              "elapsed": 59.22
+            }
+          ],
+          "top_paths_text": [
+            [
+              "{m/059dn} → user.ktrueman.default_domain.international_organization.member_states → {m/06t8v} ← people.person.nationality ← {m/05xwr8v} ← base.schemastaging.phone_sandbox.service_location ← {m/010gfxh9}",
+              1.0
+            ],
+            [
+              "{m/059dn} → user.ktrueman.default_domain.international_organization.member_states → {m/06t8v} ← people.person.nationality ← {m/056pr7f} ← location.location.people_born_here ← {m/02zbz5}",
+              1.0
+            ],
+            [
+              "{m/059dn} → user.ktrueman.default_domain.international_organization.member_states → {m/06t8v} ← film.film.country ← {m/0p79zlp}",
+              0.2727272727272727
+            ],
+            [
+              "{m/059dn} → user.ktrueman.default_domain.international_organization.member_states → {m/06t8v} ← location.mailing_address.country ← {m/0zfx0y_}",
+              0.2727272727272727
+            ],
+            [
+              "{m/059dn} → user.ktrueman.default_domain.international_organization.member_states → {m/06t8v} ← location.administrative_division.country ← {m/02gd9k}",
+              0.2727272727272727
+            ],
+            [
+              "{m/059dn} → user.ktrueman.default_domain.international_organization.member_states → {m/06t8v} ← location.administrative_division.country ← {m/02gd9k} → location.administrative_division.country → {m/02_m04g}",
+              0.2727272727272727
+            ],
+            [
+              "{m/059dn} → user.ktrueman.default_domain.international_organization.member_states → {m/06t8v} ← location.administrative_division.country ← {m/04w878} → location.administrative_division.country → {m/0_j82kd}",
+              0.2727272727272727
+            ],
+            [
+              "{m/059dn} → user.ktrueman.default_domain.international_organization.member_states → {m/06t8v} ← location.mailing_address.country ← {m/0zfx0y_} ← people.person.places_lived ← {m/0ksjqz}",
+              0.2727272727272727
+            ],
+            [
+              "{m/059dn} → user.ktrueman.default_domain.international_organization.member_states → {m/06t8v} ← location.administrative_division.country ← {m/02gd9k} → location.administrative_division.country → {m/02_m04g} ← freebase.list_entry.topic ← {m/05bl46v}",
+              0.2727272727272727
+            ],
+            [
+              "{m/059dn} → user.ktrueman.default_domain.international_organization.member_states → {m/06t8v} ← location.administrative_division.country ← {m/02gd9k} → location.administrative_division.country → {m/02_m04g} ← location.location.geolocation ← {m/0cv2s9}",
+              0.2727272727272727
+            ]
+          ],
+          "error": null,
+          "question": "Which Nato country has the largest calling code?",
+          "id": "WebQTrn-1804_2b489ba175e53ede21e46de751791829",
+          "idx": 8
+        },
+        {
+          "success": false,
+          "hop": 3,
+          "entity_count": 5,
+          "relation_count": 13,
+          "early_stop": false,
+          "time": 295.1,
+          "pred_answer": "none",
+          "gold_answer": "Braddock Expedition",
+          "answer_in_graph": false,
+          "d_predict": 2,
+          "run_depth": 3,
+          "planning": {
+            "d_predict": 2,
+            "sub_questions": [
+              "What events took place",
+              "1777-09-11",
+              "were assoiciated with George Washington?"
+            ],
+            "topic_entities_ordered": [
+              "m.034rd"
+            ],
+            "indicator_text": "\"m.034rd\" — toward: What events took place before 1777-09-11 and were assoiciated with George Washington?",
+            "planning_text": "What events took place -> 1777-09-11 -> were assoiciated with George Washington?",
+            "planning_source": "rule"
+          },
+          "phase_stats": [
+            {
+              "phase": "subgraph",
+              "nodes": 316,
+              "edges": 4425,
+              "elapsed": 0.32
+            },
+            {
+              "phase": "topic_path",
+              "depth": 2,
+              "raw_paths": 657,
+              "pruned_paths": 3,
+              "sufficient": false,
+              "elapsed": 0.0
+            },
+            {
+              "phase": "topic_path",
+              "depth": 3,
+              "raw_paths": 6843,
+              "pruned_paths": 3,
+              "sufficient": false,
+              "elapsed": 0.02
+            },
+            {
+              "phase": "supplement",
+              "predictions": 3,
+              "elapsed": 18.59
+            },
+            {
+              "phase": "node_expand",
+              "new_paths": 106,
+              "elapsed": 36.44
+            }
+          ],
+          "top_paths_text": [
+            [
+              "{m/034rd} → people.deceased_person.place_of_death → {m/013v2f} → architecture.structure.architect → {m/034rd}",
+              0.11764705882352941
+            ],
+            [
+              "{m/034rd} → people.deceased_person.place_of_death → {m/013v2f} → people.place_of_interment.interred_here → {m/034rd}",
+              0.11764705882352941
+            ],
+            [
+              "{m/034rd} → people.deceased_person.place_of_death → {m/013v2f} ← people.deceased_person.place_of_death ← {m/034rd}",
+              0.11764705882352941
+            ],
+            [
+              "{m/034rd} → people.deceased_person.place_of_death → {m/013v2f} → architecture.structure.architect → {m/034rd} → people.person.place_of_birth → {m/0mmyl}",
+              0.11764705882352941
+            ],
+            [
+              "{m/034rd} → people.deceased_person.place_of_death → {m/013v2f} → architecture.structure.architect → {m/034rd} ← people.profession.people_with_this_profession ← {m/099md}",
+              0.11764705882352941
+            ],
+            [
+              "{m/034rd} → people.deceased_person.place_of_death → {m/013v2f} → architecture.structure.architect → {m/034rd} ← people.profession.people_with_this_profession ← {m/0g0vx}",
+              0.11764705882352941
+            ],
+            [
+              "{m/034rd} → people.deceased_person.place_of_death → {m/013v2f} → architecture.structure.architect → {m/034rd} ← people.profession.people_with_this_profession ← {m/099md} → people.profession.people_with_this_profession → {m/04jxlj}",
+              0.11764705882352941
+            ],
+            [
+              "{m/034rd} → people.deceased_person.place_of_death → {m/013v2f} → architecture.structure.architect → {m/034rd} ← people.profession.people_with_this_profession ← {m/099md} → people.profession.people_with_this_profession → {m/0268k3x}",
+              0.11764705882352941
+            ],
+            [
+              "{m/034rd} → people.deceased_person.place_of_death → {m/013v2f} → architecture.structure.architect → {m/034rd} ← people.profession.people_with_this_profession ← {m/099md} → people.profession.people_with_this_profession → {m/04xjp}",
+              0.11764705882352941
+            ],
+            [
+              "{pseudo_start} → 01kq5 → {pseudo_end}",
+              0.1
+            ]
+          ],
+          "error": null,
+          "question": "What events took place before 1777-09-11 and were assoiciated with George Washington?",
+          "id": "WebQTrn-478_8d0f13c4f045c7c89fc99a7cb23febe5",
+          "idx": 9
+        },
+        {
+          "success": false,
+          "hop": 3,
+          "entity_count": 5,
+          "relation_count": 12,
+          "early_stop": false,
+          "time": 511.38,
+          "pred_answer": "",
+          "gold_answer": "Dick Cheney",
+          "answer_in_graph": false,
+          "d_predict": 2,
+          "run_depth": 3,
+          "planning": {
+            "d_predict": 2,
+            "sub_questions": [
+              "vice president was also the United States Secretary of the Air Force?"
+            ],
+            "topic_entities_ordered": [
+              "m.01sf2h"
+            ],
+            "indicator_text": "\"m.01sf2h\" — toward: Which vice president was also the United States Secretary of the Air Force?",
+            "planning_text": "vice president was also the United States Secretary of the Air Force?",
+            "planning_source": "rule"
+          },
+          "phase_stats": [
+            {
+              "phase": "subgraph",
+              "nodes": 53,
+              "edges": 1752,
+              "elapsed": 0.14
+            },
+            {
+              "phase": "topic_path",
+              "depth": 2,
+              "raw_paths": 66,
+              "pruned_paths": 3,
+              "sufficient": false,
+              "elapsed": 0.0
+            },
+            {
+              "phase": "topic_path",
+              "depth": 3,
+              "raw_paths": 1928,
+              "pruned_paths": 3,
+              "sufficient": false,
+              "elapsed": 0.01
+            },
+            {
+              "phase": "supplement",
+              "predictions": 3,
+              "elapsed": 102.24
+            }
+          ],
+          "top_paths_text": [
+            [
+              "{m/01sf2h} → government.government_office_or_title.office_holders → {m/04j9005} → government.government_position_held.office_position_or_title → {m/01sf2h} → common.topic.notable_for → {g.125509zyf}",
+              1.0
+            ],
+            [
+              "{m/01sf2h} → government.government_office_or_title.office_holders → {m/04j9005} → government.government_position_held.office_position_or_title → {m/01sf2h} → government.government_office_or_title.office_holders → {m/051fc4q}",
+              1.0
+            ],
+            [
+              "{m/01sf2h} → government.government_office_or_title.office_holders → {m/04j9005} → government.government_position_held.office_position_or_title → {m/01sf2h} ← government.government_position_held.office_position_or_title ← {m/051fc4q}",
+              1.0
+            ],
+            [
+              "{m/01sf2h} → common.topic.notable_for → {g.125509zyf} ← common.topic.notable_for ← {m/01sf2h}",
+              0.13333333333333333
+            ],
+            [
+              "{m/01sf2h} → common.topic.notable_types → {m/02xlh4m} ← common.topic.notable_types ← {m/060d2}",
+              0.13333333333333333
+            ],
+            [
+              "{m/01sf2h} → common.topic.notable_types → {m/02xlh4m} ← common.topic.notable_types ← {m/01sf2h}",
+              0.13333333333333333
+            ],
+            [
+              "{m/01sf2h} → common.topic.notable_for → {g.125509zyf} ← common.topic.notable_for ← {m/01sf2h} → government.government_office_or_title.office_holders → {m/04j9005}",
+              0.13333333333333333
+            ],
+            [
+              "{m/01sf2h} → common.topic.notable_for → {g.125509zyf} ← common.topic.notable_for ← {m/01sf2h} → government.government_office_or_title.office_holders → {m/051fc4q}",
+              0.13333333333333333
+            ],
+            [
+              "{m/01sf2h} → common.topic.notable_for → {g.125509zyf} ← common.topic.notable_for ← {m/01sf2h} ← government.government_position_held.office_position_or_title ← {m/04j9005}",
+              0.13333333333333333
+            ]
+          ],
+          "error": null,
+          "question": "Which vice president was also the United States Secretary of the Air Force?",
+          "id": "WebQTrn-3375_9a301711fdf36a2e2d6fdd7b21d65d3c",
+          "idx": 10
+        },
+        {
+          "success": true,
+          "hop": 2,
+          "entity_count": 2,
+          "relation_count": 2,
+          "early_stop": false,
+          "time": 210.25,
+          "pred_answer": "Cuba",
+          "gold_answer": "Cuba",
+          "answer_in_graph": false,
+          "d_predict": 2,
+          "run_depth": 3,
+          "planning": {
+            "d_predict": 2,
+            "sub_questions": [
+              "Where did the Cuban Missile Crisis happen in the UTC-04:00 time zone?"
+            ],
+            "topic_entities_ordered": [
+              "m.01zxx",
+              "m.0730gz"
+            ],
+            "indicator_text": "\"m.01zxx\" - \"m.0730gz\" — toward: Where did the Cuban Missile Crisis happen in the UTC-04:00 time zone?",
+            "planning_text": "Where did the Cuban Missile Crisis happen in the UTC-04:00 time zone?",
+            "planning_source": "rule"
+          },
+          "phase_stats": [
+            {
+              "phase": "subgraph",
+              "nodes": 627,
+              "edges": 7551,
+              "elapsed": 0.29
+            },
+            {
+              "phase": "topic_path",
+              "depth": 2,
+              "raw_paths": 2000,
+              "pruned_paths": 1,
+              "sufficient": true,
+              "elapsed": 0.0
+            }
+          ],
+          "top_paths_text": [
+            [
+              "{m/01zxx} → time.event.locations → {m/0d04z6} ← time.time_zone.locations_in_this_time_zone ← {m/0730gz}",
+              0.23529411764705882
+            ]
+          ],
+          "error": null,
+          "question": "Where did the Cuban Missile Crisis happen in the UTC-04:00 time zone?",
+          "id": "WebQTrn-1129_ea7e1601a2907ae8a2f4b9f68074525d",
+          "idx": 11
+        },
+        {
+          "success": false,
+          "hop": 3,
+          "entity_count": 5,
+          "relation_count": 13,
+          "early_stop": false,
+          "time": 251.37,
+          "pred_answer": "The provided knowledge graph paths exclusively relate to George Washington's medical conditions and do not mention any battles or force sizes. Therefore, the question cannot be answered based on the given information.",
+          "gold_answer": "Battle of the Monongahela",
+          "answer_in_graph": false,
+          "d_predict": 2,
+          "run_depth": 3,
+          "planning": {
+            "d_predict": 2,
+            "sub_questions": [
+              "battle with",
+              "George Washington was associated had the smallest force size?"
+            ],
+            "topic_entities_ordered": [
+              "m.034rd"
+            ],
+            "indicator_text": "\"m.034rd\" — toward: Which battle with which George Washington was associated had the smallest force size?",
+            "planning_text": "battle with -> George Washington was associated had the smallest force size?",
+            "planning_source": "rule"
+          },
+          "phase_stats": [
+            {
+              "phase": "subgraph",
+              "nodes": 313,
+              "edges": 4671,
+              "elapsed": 0.24
+            },
+            {
+              "phase": "topic_path",
+              "depth": 2,
+              "raw_paths": 664,
+              "pruned_paths": 3,
+              "sufficient": false,
+              "elapsed": 0.0
+            },
+            {
+              "phase": "topic_path",
+              "depth": 3,
+              "raw_paths": 7919,
+              "pruned_paths": 3,
+              "sufficient": false,
+              "elapsed": 0.03
+            },
+            {
+              "phase": "supplement",
+              "predictions": 3,
+              "elapsed": 37.08
+            },
+            {
+              "phase": "node_expand",
+              "new_paths": 10,
+              "elapsed": 25.11
+            }
+          ],
+          "top_paths_text": [
+            [
+              "{m/034rd} → medicine.notable_person_with_medical_condition.condition → {m/0542n} → medicine.disease.notable_people_with_this_condition → {m/034rd}",
+              0.13333333333333333
+            ],
+            [
+              "{m/034rd} → medicine.notable_person_with_medical_condition.condition → {m/0542n} ← medicine.notable_person_with_medical_condition.condition ← {m/034rd}",
+              0.13333333333333333
+            ],
+            [
+              "{m/034rd} → medicine.notable_person_with_medical_condition.condition → {m/0542n} ← base.yupgrade.user.topics ← {m/07c_tvf}",
+              0.13333333333333333
+            ],
+            [
+              "{m/034rd} → medicine.notable_person_with_medical_condition.condition → {m/0542n} → medicine.disease.notable_people_with_this_condition → {m/034rd} → medicine.notable_person_with_medical_condition.condition → {m/06vr2}",
+              0.13333333333333333
+            ],
+            [
+              "{m/034rd} → medicine.notable_person_with_medical_condition.condition → {m/0542n} → medicine.disease.notable_people_with_this_condition → {m/034rd} → medicine.notable_person_with_medical_condition.condition → {m/07jwr}",
+              0.13333333333333333
+            ],
+            [
+              "{m/034rd} → medicine.notable_person_with_medical_condition.condition → {m/0542n} → medicine.disease.notable_people_with_this_condition → {m/034rd} → visual_art.art_subject.art_series_on_the_subject → {m/03c61ff}",
+              0.13333333333333333
+            ],
+            [
+              "{m/034rd} → medicine.notable_person_with_medical_condition.condition → {m/0542n} → medicine.disease.notable_people_with_this_condition → {m/034rd} → medicine.notable_person_with_medical_condition.condition → {m/06vr2} → medicine.disease.notable_people_with_this_condition → {m/0gzh}",
+              0.13333333333333333
+            ],
+            [
+              "{m/034rd} → medicine.notable_person_with_medical_condition.condition → {m/0542n} → medicine.disease.notable_people_with_this_condition → {m/034rd} → medicine.notable_person_with_medical_condition.condition → {m/06vr2} → people.cause_of_death.people → {m/04slsb}",
+              0.13333333333333333
+            ],
+            [
+              "{m/034rd} → medicine.notable_person_with_medical_condition.condition → {m/0542n} → medicine.disease.notable_people_with_this_condition → {m/034rd} → medicine.notable_person_with_medical_condition.condition → {m/06vr2} ← medicine.notable_person_with_medical_condition.condition ← {m/0gzh}",
+              0.13333333333333333
+            ],
+            [
+              "{pseudo_start} → 013wz → {pseudo_end}",
+              0.1
+            ]
+          ],
+          "error": null,
+          "question": "Which battle with which George Washington was associated had the smallest force size?",
+          "id": "WebQTrn-478_95af9457d728b4b07aefbf8d0491eaef",
+          "idx": 12
+        },
+        {
+          "success": false,
+          "hop": 3,
+          "entity_count": 7,
+          "relation_count": 21,
+          "early_stop": false,
+          "time": 340.38,
+          "pred_answer": "French and Indian War",
+          "gold_answer": "Battle of the Monongahela",
+          "answer_in_graph": false,
+          "d_predict": 3,
+          "run_depth": 3,
+          "planning": {
+            "d_predict": 3,
+            "sub_questions": [
+              "What was the name of the war George Washington fought in",
+              "there was less than 2100 men?"
+            ],
+            "topic_entities_ordered": [
+              "m.034rd"
+            ],
+            "indicator_text": "\"m.034rd\" — toward: What was the name of the war George Washington fought in which there was less than 2100 men?",
+            "planning_text": "What was the name of the war George Washington fought in -> there was less than 2100 men?",
+            "planning_source": "rule"
+          },
+          "phase_stats": [
+            {
+              "phase": "subgraph",
+              "nodes": 478,
+              "edges": 9813,
+              "elapsed": 0.25
+            },
+            {
+              "phase": "topic_path",
+              "depth": 3,
+              "raw_paths": 339369,
+              "pruned_paths": 3,
+              "sufficient": false,
+              "elapsed": 0.46
+            },
+            {
+              "phase": "supplement",
+              "predictions": 3,
+              "elapsed": 169.84
+            },
+            {
+              "phase": "node_expand",
+              "new_paths": 20,
+              "elapsed": 52.29
+            }
+          ],
+          "top_paths_text": [
+            [
+              "{m/034rd} → symbols.name_source.namesakes → {m/01nnsv} → symbols.namesake.named_after → {m/034rd} → symbols.name_source.namesakes → {m/01h8rk}",
+              1.0
+            ],
+            [
+              "{m/034rd} → symbols.name_source.namesakes → {m/01nnsv} → symbols.namesake.named_after → {m/034rd} ← symbols.namesake.named_after ← {m/01h8rk}",
+              1.0
+            ],
+            [
+              "{m/034rd} → symbols.name_source.namesakes → {m/029q5h} → symbols.namesake.named_after → {m/034rd} → symbols.name_source.namesakes → {m/01h8rk}",
+              1.0
+            ],
+            [
+              "{m/029q5h} → symbols.namesake.named_after → {m/034rd} → symbols.name_source.namesakes → {m/01h8rk} ← education.school_newspaper.school ← {m/027lxw7}",
+              1.0
+            ],
+            [
+              "{m/034rd} → symbols.name_source.namesakes → {m/0p42s} → symbols.namesake.named_after → {m/034rd} → symbols.name_source.namesakes → {m/01h8rk}",
+              1.0
+            ],
+            [
+              "{m/034rd} ← symbols.namesake.named_after ← {m/01h8rk} → symbols.namesake.named_after → {m/034rd} → symbols.name_source.namesakes → {m/0p42s}",
+              1.0
+            ],
+            [
+              "{m/034rd} → symbols.name_source.namesakes → {m/01h8rk} → symbols.namesake.named_after → {m/034rd} → symbols.name_source.namesakes → {m/01nnsv}",
+              0.10526315789473684
+            ],
+            [
+              "{m/034rd} → symbols.name_source.namesakes → {m/01h8rk} → symbols.namesake.named_after → {m/034rd} → symbols.name_source.namesakes → {m/029q5h}",
+              0.10526315789473684
+            ],
+            [
+              "{m/034rd} → symbols.name_source.namesakes → {m/01h8rk} → symbols.namesake.named_after → {m/034rd} → symbols.name_source.namesakes → {m/0p42s}",
+              0.10526315789473684
+            ],
+            [
+              "{m/034rd} → symbols.name_source.namesakes → {m/01h8rk} → symbols.namesake.named_after → {m/034rd} → symbols.name_source.namesakes → {m/029q5h} → common.topic.notable_types → {m/01m9}",
+              0.10526315789473684
+            ]
+          ],
+          "error": null,
+          "question": "What was the name of the war George Washington fought in which there was less than 2100 men?",
+          "id": "WebQTrn-478_d8c4296e3da3e601da84c69a476b37f9",
+          "idx": 13
+        },
+        {
+          "success": true,
+          "hop": 3,
+          "entity_count": 4,
+          "relation_count": 9,
+          "early_stop": false,
+          "time": 336.29,
+          "pred_answer": "Brussels",
+          "gold_answer": "Brussels",
+          "answer_in_graph": false,
+          "d_predict": 2,
+          "run_depth": 3,
+          "planning": {
+            "d_predict": 2,
+            "sub_questions": [
+              "What city, during world war ll, circulated the La Libra Belgique.?"
+            ],
+            "topic_entities_ordered": [
+              "m.0qs9gg8"
+            ],
+            "indicator_text": "\"m.0qs9gg8\" — toward: What city, during world war ll, circulated the La Libra Belgique.?",
+            "planning_text": "What city, during world war ll, circulated the La Libra Belgique.?",
+            "planning_source": "rule"
+          },
+          "phase_stats": [
+            {
+              "phase": "subgraph",
+              "nodes": 54,
+              "edges": 625,
+              "elapsed": 0.05
+            },
+            {
+              "phase": "topic_path",
+              "depth": 2,
+              "raw_paths": 98,
+              "pruned_paths": 3,
+              "sufficient": false,
+              "elapsed": 0.0
+            },
+            {
+              "phase": "topic_path",
+              "depth": 3,
+              "raw_paths": 994,
+              "pruned_paths": 3,
+              "sufficient": false,
+              "elapsed": 0.0
+            },
+            {
+              "phase": "supplement",
+              "predictions": 3,
+              "elapsed": 74.91
+            }
+          ],
+          "top_paths_text": [
+            [
+              "{m/0qs9gg8} → common.topic.notable_types → {m/02k9yd8} ← common.topic.notable_types ← {m/05ywxjv} → base.meedan.arabic_language_media_source.city → {m/01fqm}",
+              0.21428571428571427
+            ],
+            [
+              "{m/0qs9gg8} → book.newspaper.circulation_areas → {m/0154j} ← location.location.containedby ← {m/017wyy}",
+              0.14285714285714285
+            ],
+            [
+              "{m/0qs9gg8} → book.newspaper.circulation_areas → {m/0154j} ← location.location.containedby ← {m/0_gw0w6}",
+              0.14285714285714285
+            ],
+            [
+              "{m/0qs9gg8} → book.newspaper.circulation_areas → {m/0154j} ← location.location.containedby ← {m/017pkg}",
+              0.14285714285714285
+            ],
+            [
+              "{m/0qs9gg8} → common.topic.notable_types → {m/02k9yd8} ← common.topic.notable_types ← {m/05ywxjv} → book.newspaper.circulation_areas → {m/01fqm}",
+              0.14285714285714285
+            ],
+            [
+              "{m/0qs9gg8} → common.topic.notable_types → {m/02k9yd8} ← common.topic.notable_types ← {m/05ywxjv} → book.newspaper.headquarters → {m/0j1tbw0}",
+              0.14285714285714285
+            ]
+          ],
+          "error": null,
+          "question": "What city, during world war ll, circulated the La Libra Belgique.?",
+          "id": "WebQTrn-2087_cf7833e237b8cda1de396587129515c1",
+          "idx": 14
+        },
+        {
+          "success": false,
+          "hop": 3,
+          "entity_count": 6,
+          "relation_count": 8,
+          "early_stop": false,
+          "time": 242.05,
+          "pred_answer": "Romania",
+          "gold_answer": "Bulgaria",
+          "answer_in_graph": false,
+          "d_predict": 3,
+          "run_depth": 3,
+          "planning": {
+            "d_predict": 3,
+            "sub_questions": [
+              "What Nato member country that is in Eastern European Time Zone?"
+            ],
+            "topic_entities_ordered": [
+              "m.059dn",
+              "m.03plfd"
+            ],
+            "indicator_text": "\"m.059dn\" - \"m.03plfd\" — toward: What Nato member country that is in Eastern European Time Zone?",
+            "planning_text": "What Nato member country that is in Eastern European Time Zone?",
+            "planning_source": "rule"
+          },
+          "phase_stats": [
+            {
+              "phase": "subgraph",
+              "nodes": 4866,
+              "edges": 29353,
+              "elapsed": 0.93
+            },
+            {
+              "phase": "topic_path",
+              "depth": 3,
+              "raw_paths": 6453012,
+              "pruned_paths": 3,
+              "sufficient": true,
+              "elapsed": 22.4
+            }
+          ],
+          "top_paths_text": [
+            [
+              "{m/059dn} → user.ktrueman.default_domain.international_organization.member_states → {m/015qh} ← location.administrative_division.country ← {m/0nh2mhs} ← time.time_zone.locations_in_this_time_zone ← {m/03plfd}",
+              0.3333333333333333
+            ],
+            [
+              "{m/059dn} → user.ktrueman.default_domain.international_organization.member_states → {m/035qy} → location.country.third_level_divisions → {m/028qbk} ← time.time_zone.locations_in_this_time_zone ← {m/03plfd}",
+              0.3333333333333333
+            ],
+            [
+              "{m/059dn} → user.ktrueman.default_domain.international_organization.member_states → {m/035qy} → location.country.third_level_divisions → {m/01kv_0} ← time.time_zone.locations_in_this_time_zone ← {m/03plfd}",
+              0.3333333333333333
+            ]
+          ],
+          "error": null,
+          "question": "What Nato member country that is in Eastern European Time Zone?",
+          "id": "WebQTrn-2338_a725d13be16116bdc37bf5dd852e35b1",
+          "idx": 15
+        },
+        {
+          "success": false,
+          "hop": 3,
+          "entity_count": 5,
+          "relation_count": 11,
+          "early_stop": false,
+          "time": 189.44,
+          "pred_answer": "American Revolutionary War",
+          "gold_answer": "Battle of the Monongahela",
+          "answer_in_graph": false,
+          "d_predict": 3,
+          "run_depth": 3,
+          "planning": {
+            "d_predict": 3,
+            "sub_questions": [
+              "war was George Washington associated with where the force he was with was larger than opposition?"
+            ],
+            "topic_entities_ordered": [
+              "m.034rd"
+            ],
+            "indicator_text": "\"m.034rd\" — toward: Which war was George Washington associated with where the force he was with was larger than opposition?",
+            "planning_text": "war was George Washington associated with where the force he was with was larger than opposition?",
+            "planning_source": "rule"
+          },
+          "phase_stats": [
+            {
+              "phase": "subgraph",
+              "nodes": 313,
+              "edges": 4654,
+              "elapsed": 0.29
+            },
+            {
+              "phase": "topic_path",
+              "depth": 3,
+              "raw_paths": 7851,
+              "pruned_paths": 3,
+              "sufficient": false,
+              "elapsed": 0.01
+            },
+            {
+              "phase": "supplement",
+              "predictions": 3,
+              "elapsed": 41.36
+            },
+            {
+              "phase": "node_expand",
+              "new_paths": 10,
+              "elapsed": 35.13
+            }
+          ],
+          "top_paths_text": [
+            [
+              "{m/034rd} → medicine.notable_person_with_medical_condition.condition → {m/0542n} → medicine.disease.notable_people_with_this_condition → {m/034rd} → medicine.notable_person_with_medical_condition.condition → {m/06vr2}",
+              0.11764705882352941
+            ],
+            [
+              "{m/034rd} → medicine.notable_person_with_medical_condition.condition → {m/0542n} → medicine.disease.notable_people_with_this_condition → {m/034rd} → medicine.notable_person_with_medical_condition.condition → {m/07jwr}",
+              0.11764705882352941
+            ],
+            [
+              "{m/034rd} → medicine.notable_person_with_medical_condition.condition → {m/0542n} → medicine.disease.notable_people_with_this_condition → {m/034rd} → visual_art.art_subject.art_series_on_the_subject → {m/03c61ff}",
+              0.11764705882352941
+            ],
+            [
+              "{m/034rd} → medicine.notable_person_with_medical_condition.condition → {m/0542n} → medicine.disease.notable_people_with_this_condition → {m/034rd} → medicine.notable_person_with_medical_condition.condition → {m/06vr2} → medicine.disease.notable_people_with_this_condition → {m/0gzh}",
+              0.11764705882352941
+            ],
+            [
+              "{m/034rd} → medicine.notable_person_with_medical_condition.condition → {m/0542n} → medicine.disease.notable_people_with_this_condition → {m/034rd} → medicine.notable_person_with_medical_condition.condition → {m/06vr2} → people.cause_of_death.people → {m/04slsb}",
+              0.11764705882352941
+            ],
+            [
+              "{m/034rd} → medicine.notable_person_with_medical_condition.condition → {m/0542n} → medicine.disease.notable_people_with_this_condition → {m/034rd} → medicine.notable_person_with_medical_condition.condition → {m/06vr2} ← medicine.notable_person_with_medical_condition.condition ← {m/0gzh}",
+              0.11764705882352941
+            ],
+            [
+              "{pseudo_start} → George Washington --[military_commander]--> American Revolutionary War --[participating_forces]--> Continental Army → {pseudo_end}",
+              0.1
+            ],
+            [
+              "{pseudo_start} → George Washington --[military_conflict]--> American Revolutionary War --[allied_forces_size_comparison]--> British Army → {pseudo_end}",
+              0.1
+            ],
+            [
+              "{pseudo_start} → George Washington --[military_branch]--> Continental Army --[numerical_superiority]--> British Army → {pseudo_end}",
+              0.1
+            ]
+          ],
+          "error": null,
+          "question": "Which war was George Washington associated with where the force he was with was larger than opposition?",
+          "id": "WebQTrn-478_c4c34892eb17247e49ddb2fd2bd89653",
+          "idx": 16
+        },
+        {
+          "success": false,
+          "hop": 3,
+          "entity_count": 9,
+          "relation_count": 20,
+          "early_stop": false,
+          "time": 306.68,
+          "pred_answer": "Battle of Brandywine",
+          "gold_answer": "Battle of the Monongahela",
+          "answer_in_graph": false,
+          "d_predict": 2,
+          "run_depth": 3,
+          "planning": {
+            "d_predict": 2,
+            "sub_questions": [
+              "In",
+              "battle won by George Washington was the force size larger than 824?"
+            ],
+            "topic_entities_ordered": [
+              "m.034rd"
+            ],
+            "indicator_text": "\"m.034rd\" — toward: In which battle won by George Washington was the force size larger than 824?",
+            "planning_text": "In -> battle won by George Washington was the force size larger than 824?",
+            "planning_source": "rule"
+          },
+          "phase_stats": [
+            {
+              "phase": "subgraph",
+              "nodes": 32,
+              "edges": 226,
+              "elapsed": 0.07
+            },
+            {
+              "phase": "topic_path",
+              "depth": 2,
+              "raw_paths": 57,
+              "pruned_paths": 3,
+              "sufficient": false,
+              "elapsed": 0.0
+            },
+            {
+              "phase": "topic_path",
+              "depth": 3,
+              "raw_paths": 740,
+              "pruned_paths": 3,
+              "sufficient": false,
+              "elapsed": 0.0
+            },
+            {
+              "phase": "supplement",
+              "predictions": 3,
+              "elapsed": 102.88
+            },
+            {
+              "phase": "node_expand",
+              "new_paths": 320,
+              "elapsed": 23.36
+            }
+          ],
+          "top_paths_text": [
+            [
+              "{m/034rd} → visual_art.art_subject.artwork_on_the_subject → {m/05hc09} ← visual_art.art_subject.artwork_on_the_subject ← {m/034rd} → visual_art.art_subject.artwork_on_the_subject → {m/06_5kct}",
+              1.0
+            ],
+            [
+              "{m/034rd} → visual_art.art_subject.artwork_on_the_subject → {m/06_5kct} → common.topic.notable_types → {m/01y2hcq} ← common.topic.notable_types ← {m/06_pl4c}",
+              1.0
+            ],
+            [
+              "{m/034rd} → visual_art.art_subject.artwork_on_the_subject → {m/05hc09} ← visual_art.art_subject.artwork_on_the_subject ← {m/034rd} → visual_art.art_subject.artwork_on_the_subject → {m/0swnxdg}",
+              1.0
+            ],
+            [
+              "{m/034rd} → visual_art.art_subject.artwork_on_the_subject → {m/06_5kct} → visual_art.artwork.art_subject → {m/034rd} → visual_art.art_subject.artwork_on_the_subject → {m/0swnxdg}",
+              1.0
+            ],
+            [
+              "{m/034rd} → visual_art.art_subject.artwork_on_the_subject → {m/06_5kct} → common.topic.notable_types → {m/01y2hcq}",
+              0.11764705882352941
+            ],
+            [
+              "{m/034rd} → visual_art.art_subject.artwork_on_the_subject → {m/06_5kct} → common.topic.notable_for → {g.125517h58}",
+              0.11764705882352941
+            ],
+            [
+              "{m/034rd} → visual_art.art_subject.artwork_on_the_subject → {m/06_pl4c} → common.topic.notable_types → {m/01y2hcq}",
+              0.11764705882352941
+            ],
+            [
+              "{m/034rd} → visual_art.art_subject.artwork_on_the_subject → {m/05hc09} → visual_art.artwork.art_subject → {m/04zy_w3} ← base.yupgrade.user.topics ← {m/07c_tvf}",
+              0.11764705882352941
+            ],
+            [
+              "{m/034rd} → visual_art.art_subject.artwork_on_the_subject → {m/05hc09} → visual_art.artwork.art_subject → {m/034rd} → visual_art.art_subject.artwork_on_the_subject → {m/06_5kct}",
+              0.11764705882352941
+            ],
+            [
+              "{m/034rd} → visual_art.art_subject.artwork_on_the_subject → {m/05hc09} → visual_art.artwork.art_subject → {m/034rd} → visual_art.art_subject.artwork_on_the_subject → {m/0swnxdg}",
+              0.11764705882352941
+            ]
+          ],
+          "error": null,
+          "question": "In which battle won by George Washington was the force size larger than 824?",
+          "id": "WebQTrn-2877_a4a62797c28e9e38663f09624bf77622",
+          "idx": 17
+        },
+        {
+          "success": false,
+          "hop": 3,
+          "entity_count": 7,
+          "relation_count": 18,
+          "early_stop": false,
+          "time": 452.0,
+          "pred_answer": "feudalism",
+          "gold_answer": "Semi-presidential system",
+          "answer_in_graph": false,
+          "d_predict": 3,
+          "run_depth": 3,
+          "planning": {
+            "d_predict": 3,
+            "sub_questions": [
+              "What kind of political practices would someone that fought in the Battle of Kulikovo have?"
+            ],
+            "topic_entities_ordered": [
+              "m.01975w"
+            ],
+            "indicator_text": "\"m.01975w\" — toward: What kind of political practices would someone that fought in the Battle of Kulikovo have?",
+            "planning_text": "What kind of political practices would someone that fought in the Battle of Kulikovo have?",
+            "planning_source": "rule"
+          },
+          "phase_stats": [
+            {
+              "phase": "subgraph",
+              "nodes": 73,
+              "edges": 888,
+              "elapsed": 0.03
+            },
+            {
+              "phase": "topic_path",
+              "depth": 3,
+              "raw_paths": 1238,
+              "pruned_paths": 3,
+              "sufficient": false,
+              "elapsed": 0.0
+            },
+            {
+              "phase": "supplement",
+              "predictions": 3,
+              "elapsed": 213.91
+            },
+            {
+              "phase": "node_expand",
+              "new_paths": 351,
+              "elapsed": 38.06
+            }
+          ],
+          "top_paths_text": [
+            [
+              "{m/01975w} → time.event.locations → {m/027ttvq} → location.location.events → {m/01975w} ← military.force_strength.military_conflict ← {m/04lmlc1}",
+              1.0
+            ],
+            [
+              "{m/01975w} → time.event.locations → {m/027ttvq} → location.location.events → {m/01975w} ← military.force_strength.military_conflict ← {m/04lmlbr}",
+              1.0
+            ],
+            [
+              "{m/01975w} → time.event.locations → {m/0n1hr} → location.location.events → {m/01975w} ← military.force_strength.military_conflict ← {m/04lmlc1}",
+              1.0
+            ],
+            [
+              "{m/01975w} → time.event.locations → {m/0n1hr} → location.location.events → {m/01975w} ← military.force_strength.military_conflict ← {m/04lmlbr}",
+              1.0
+            ],
+            [
+              "{m/01975w} ← people.profession.people_with_this_profession ← {m/0gl2ny2} → people.profession.people_with_this_profession → {m/09g8tdz} → people.person.profession → {g.11b6gfd45x}",
+              1.0
+            ],
+            [
+              "{m/01975w} ← people.profession.people_with_this_profession ← {m/0gl2ny2} → people.profession.people_with_this_profession → {m/09g8tdz} → common.topic.notable_types → {m/01xljr7}",
+              1.0
+            ],
+            [
+              "{m/01975w} ← people.profession.people_with_this_profession ← {m/0gl2ny2} → people.profession.people_with_this_profession → {m/09g8tdz} → common.topic.notable_for → {g.1258dvgs6}",
+              1.0
+            ],
+            [
+              "{m/01975w} → time.event.locations → {m/027ttvq} → location.location.events → {m/01975w} ← people.profession.people_with_this_profession ← {m/0gl2ny2}",
+              0.11764705882352941
+            ],
+            [
+              "{m/01975w} → time.event.locations → {m/027ttvq} ← time.event.locations ← {m/01975w} ← people.profession.people_with_this_profession ← {m/0gl2ny2}",
+              0.11764705882352941
+            ],
+            [
+              "{m/01975w} → time.event.locations → {m/0n1hr} → location.location.events → {m/01975w} ← people.profession.people_with_this_profession ← {m/0gl2ny2}",
+              0.11764705882352941
+            ]
+          ],
+          "error": null,
+          "question": "What kind of political practices would someone that fought in the Battle of Kulikovo have?",
+          "id": "WebQTrn-871_4bedefa2f2f0c2843bcf7407cd03420c",
+          "idx": 18
+        },
+        {
+          "success": false,
+          "hop": 2,
+          "entity_count": 4,
+          "relation_count": 6,
+          "early_stop": false,
+          "time": 120.11,
+          "pred_answer": "Kuwait",
+          "gold_answer": "Saudi Arabia",
+          "answer_in_graph": false,
+          "d_predict": 2,
+          "run_depth": 3,
+          "planning": {
+            "d_predict": 2,
+            "sub_questions": [
+              "country in the Arabia Time Zone fought in the 1991 Gulf War?"
+            ],
+            "topic_entities_ordered": [
+              "m.018w0j",
+              "m.0y497tt"
+            ],
+            "indicator_text": "\"m.018w0j\" - \"m.0y497tt\" — toward: Which country in the Arabia Time Zone fought in the 1991 Gulf War?",
+            "planning_text": "country in the Arabia Time Zone fought in the 1991 Gulf War?",
+            "planning_source": "rule"
+          },
+          "phase_stats": [
+            {
+              "phase": "subgraph",
+              "nodes": 706,
+              "edges": 5822,
+              "elapsed": 0.25
+            },
+            {
+              "phase": "topic_path",
+              "depth": 2,
+              "raw_paths": 1540,
+              "pruned_paths": 3,
+              "sufficient": true,
+              "elapsed": 0.0
+            }
+          ],
+          "top_paths_text": [
+            [
+              "{m/018w0j} → time.event.locations → {m/0d05q4} ← time.time_zone.locations_in_this_time_zone ← {m/0y497tt}",
+              0.26666666666666666
+            ],
+            [
+              "{m/018w0j} → time.event.locations → {m/047yc} ← time.time_zone.locations_in_this_time_zone ← {m/0y497tt}",
+              0.26666666666666666
+            ],
+            [
+              "{m/018w0j} → time.event.locations → {m/0661z} ← time.time_zone.locations_in_this_time_zone ← {m/0y497tt}",
+              0.26666666666666666
+            ]
+          ],
+          "error": null,
+          "question": "Which country in the Arabia Time Zone fought in the 1991 Gulf War?",
+          "id": "WebQTest-118_246df9cb8c1270992b65275e4997b955",
+          "idx": 19
+        },
+        {
+          "success": true,
+          "hop": 3,
+          "entity_count": 18,
+          "relation_count": 33,
+          "early_stop": false,
+          "time": 1245.99,
+          "pred_answer": "World War I",
+          "gold_answer": "World War I",
+          "answer_in_graph": false,
+          "d_predict": 2,
+          "run_depth": 3,
+          "planning": {
+            "d_predict": 2,
+            "sub_questions": [
+              "war had the largest casualties",
+              "Woodrow Wilson was president for?"
+            ],
+            "topic_entities_ordered": [
+              "m.083q7",
+              "m.060c4",
+              "m.02h76fz",
+              "m.09c7w0"
+            ],
+            "indicator_text": "\"m.083q7\" - \"m.060c4\" - \"m.02h76fz\" - \"m.09c7w0\" — toward: Which war had the largest casualties and Woodrow Wilson was president for?",
+            "planning_text": "war had the largest casualties -> Woodrow Wilson was president for?",
+            "planning_source": "rule"
+          },
+          "phase_stats": [
+            {
+              "phase": "subgraph",
+              "nodes": 6891,
+              "edges": 48396,
+              "elapsed": 1.36
+            },
+            {
+              "phase": "topic_path",
+              "depth": 2,
+              "raw_paths": 13670,
+              "pruned_paths": 3,
+              "sufficient": false,
+              "elapsed": 0.02
+            },
+            {
+              "phase": "topic_path",
+              "depth": 3,
+              "raw_paths": 8308205,
+              "pruned_paths": 3,
+              "sufficient": false,
+              "elapsed": 28.8
+            },
+            {
+              "phase": "supplement",
+              "predictions": 3,
+              "elapsed": 753.4
+            },
+            {
+              "phase": "node_expand",
+              "new_paths": 13,
+              "elapsed": 80.59
+            }
+          ],
+          "top_paths_text": [
+            [
+              "{m/02h76fz} ← common.topic.notable_types ← {m/04dmv_} → base.culturalevent.event.entity_involved → {m/09c7w0} ← time.event.locations ← {m/0b35x}",
+              1.0
+            ],
+            [
+              "{m/02h76fz} ← common.topic.notable_types ← {m/06_0l2} → base.culturalevent.event.entity_involved → {m/09c7w0} ← time.event.locations ← {m/0b35x}",
+              1.0
+            ],
+            [
+              "{m/02h76fz} ← common.topic.notable_types ← {m/05gx4q} → base.culturalevent.event.entity_involved → {m/09c7w0} ← time.event.locations ← {m/0b35x}",
+              1.0
+            ],
+            [
+              "{m/083q7} ← base.inaugurations.inauguration.president ← {m/05brs89} → base.culturalevent.event.entity_involved → {m/083q7} ← base.inaugurations.inauguration.president ← {m/05brsbd}",
+              1.0
+            ],
+            [
+              "{m/083q7} ← base.inaugurations.inauguration.president ← {m/05brs89} → base.inaugurations.inauguration.president → {m/083q7} ← base.inaugurations.inauguration.president ← {m/05brsbd}",
+              1.0
+            ],
+            [
+              "{m/083q7} ← base.inaugurations.inauguration.president ← {m/05brs89} ← common.topic.notable_types ← {m/0pxmy02} → common.topic.notable_types → {m/0jsg4b}",
+              1.0
+            ],
+            [
+              "{m/02h76fz} ← common.topic.notable_types ← {m/09fqjm} ← military.military_person.participated_in_conflicts ← {m/0d3k14} ← government.election.winner ← {m/0b3d_}",
+              1.0
+            ],
+            [
+              "{m/09c7w0} ← time.event.locations ← {m/0b3d_} → government.election.winner → {m/0d3k14} → military.military_person.participated_in_conflicts → {m/09fqjm}",
+              1.0
+            ],
+            [
+              "{m/09c7w0} ← time.event.locations ← {m/0b3d_} → government.election.winner → {m/0d3k14} ← military.military_conflict.military_personnel_involved ← {m/09fqjm}",
+              1.0
+            ],
+            [
+              "{m/09c7w0} ← time.event.locations ← {m/0b35x} → base.culturalevent.event.entity_involved → {m/083q7} ← base.inaugurations.inauguration.president ← {m/05brs89}",
+              0.2222222222222222
+            ]
+          ],
+          "error": null,
+          "question": "Which war had the largest casualties and Woodrow Wilson was president for?",
+          "id": "WebQTrn-2707_47c8487064cf70208746bc2aa110f667",
+          "idx": 20
+        },
+        {
+          "success": false,
+          "hop": 3,
+          "entity_count": 7,
+          "relation_count": 19,
+          "early_stop": false,
+          "time": 465.1,
+          "pred_answer": "Battle of Bull Run",
+          "gold_answer": "Battle of McDowell",
+          "answer_in_graph": false,
+          "d_predict": 3,
+          "run_depth": 3,
+          "planning": {
+            "d_predict": 3,
+            "sub_questions": [
+              "What battles in",
+              "Stonewall Jackson fought are events that ended prior to 25 May 1862?"
+            ],
+            "topic_entities_ordered": [
+              "m.07r8h"
+            ],
+            "indicator_text": "\"m.07r8h\" — toward: What battles in which Stonewall Jackson fought are events that ended prior to 25 May 1862?",
+            "planning_text": "What battles in -> Stonewall Jackson fought are events that ended prior to 25 May 1862?",
+            "planning_source": "rule"
+          },
+          "phase_stats": [
+            {
+              "phase": "subgraph",
+              "nodes": 17,
+              "edges": 881,
+              "elapsed": 0.04
+            },
+            {
+              "phase": "topic_path",
+              "depth": 3,
+              "raw_paths": 1602,
+              "pruned_paths": 3,
+              "sufficient": false,
+              "elapsed": 0.0
+            },
+            {
+              "phase": "supplement",
+              "predictions": 3,
+              "elapsed": 140.25
+            },
+            {
+              "phase": "node_expand",
+              "new_paths": 64,
+              "elapsed": 118.0
+            }
+          ],
+          "top_paths_text": [
+            [
+              "{m/07r8h} → people.person.parents → {m/04zhtc} → people.person.place_of_birth → {m/0mnlq} → location.location.events → {m/04wb2k}",
+              0.15789473684210525
+            ],
+            [
+              "{m/07r8h} → people.person.parents → {m/04zhtc} → people.person.place_of_birth → {m/0mnlq} → location.location.events → {m/02p037}",
+              0.15789473684210525
+            ],
+            [
+              "{m/07r8h} → people.person.parents → {m/04zhtc} ← location.location.people_born_here ← {m/0mnlq} → location.location.events → {m/04wb2k}",
+              0.15789473684210525
+            ],
+            [
+              "{m/07r8h} → people.person.parents → {m/04zhtc} → people.person.place_of_birth → {m/0mnlq} → location.location.events → {m/04wb2k} → military.military_conflict.combatants → {m/04fv9h3}",
+              0.15789473684210525
+            ],
+            [
+              "{m/07r8h} → people.person.parents → {m/04zhtc} → people.person.place_of_birth → {m/0mnlq} → location.location.events → {m/04wb2k} → military.military_conflict.combatants → {m/04fv9gz}",
+              0.15789473684210525
+            ],
+            [
+              "{m/07r8h} → people.person.parents → {m/04zhtc} → people.person.place_of_birth → {m/0mnlq} → location.location.events → {m/04wb2k} → military.military_conflict.combatants → {m/04fv9h8}",
+              0.15789473684210525
+            ],
+            [
+              "{pseudo_start} → 02wqy → {pseudo_end}",
+              0.1
+            ],
+            [
+              "{pseudo_start} → 06x6q → {pseudo_end}",
+              0.1
+            ],
+            [
+              "{m/07r8h} → people.person.parents → {m/04zhtc} → people.person.place_of_birth → {m/0mnlq} ← time.event.locations ← {m/04wb2k}",
+              0.0
+            ],
+            [
+              "{m/07r8h} ← people.person.children ← {m/04zhtc} → people.person.place_of_birth → {m/0mnlq} ← time.event.locations ← {m/04wb2k}",
+              0.0
+            ]
+          ],
+          "error": null,
+          "question": "What battles in which Stonewall Jackson fought are events that ended prior to 25 May 1862?",
+          "id": "WebQTest-72_3bf5adb92785cacb9509e328811cfaee",
+          "idx": 21
+        },
+        {
+          "success": false,
+          "hop": 3,
+          "entity_count": 6,
+          "relation_count": 19,
+          "early_stop": false,
+          "time": 508.99,
+          "pred_answer": "Harvard University, Yale University, Princeton University",
+          "gold_answer": "Harvard Law School",
+          "answer_in_graph": false,
+          "d_predict": 1,
+          "run_depth": 3,
+          "planning": {
+            "d_predict": 1,
+            "sub_questions": [
+              "Name the three schools attended by the speaker at the 70th Anniversary of the D-Day Normandy Invasion?"
+            ],
+            "topic_entities_ordered": [
+              "m.010r041_"
+            ],
+            "indicator_text": "\"m.010r041_\" — toward: Name the three schools attended by the speaker at the 70th Anniversary of the D-Day Normandy Invasion?",
+            "planning_text": "Name the three schools attended by the speaker at the 70th Anniversary of the D-Day Normandy Invasion?",
+            "planning_source": "rule"
+          },
+          "phase_stats": [
+            {
+              "phase": "subgraph",
+              "nodes": 10,
+              "edges": 49,
+              "elapsed": 0.0
+            },
+            {
+              "phase": "topic_path",
+              "depth": 1,
+              "raw_paths": 6,
+              "pruned_paths": 3,
+              "sufficient": false,
+              "elapsed": 0.0
+            },
+            {
+              "phase": "topic_path",
+              "depth": 2,
+              "raw_paths": 16,
+              "pruned_paths": 3,
+              "sufficient": false,
+              "elapsed": 0.0
+            },
+            {
+              "phase": "topic_path",
+              "depth": 3,
+              "raw_paths": 83,
+              "pruned_paths": 3,
+              "sufficient": false,
+              "elapsed": 0.0
+            },
+            {
+              "phase": "supplement",
+              "predictions": 3,
+              "elapsed": 170.63
+            },
+            {
+              "phase": "node_expand",
+              "new_paths": 4,
+              "elapsed": 34.92
+            }
+          ],
+          "top_paths_text": [
+            [
+              "{m/010r041_} → common.topic.notable_for → {g.11bbqdm6bm} ← common.topic.notable_for ← {m/010r041_} ← event.speech_or_presentation.event ← {m/010r243f}",
+              1.0
+            ],
+            [
+              "{m/010r041_} → event.public_speaking_event.speech_presentation_discussion → {m/010r243f} ← event.public_speaking_event.speech_presentation_discussion ← {m/010r041_} → common.topic.notable_for → {g.11bbqdm6bm}",
+              1.0
+            ],
+            [
+              "{m/010r041_} → time.event.locations → {m/0q4tg} → location.location.events → {m/010r041_} → common.topic.notable_for → {g.11bbqdm6bm}",
+              1.0
+            ],
+            [
+              "{m/010r041_} → time.event.locations → {m/0q4tg} → location.location.events → {m/010r041_} → common.topic.notable_types → {m/05r4y_k}",
+              1.0
+            ],
+            [
+              "{m/010r041_} → common.topic.notable_for → {g.11bbqdm6bm} ← common.topic.notable_for ← {m/010r041_} → common.topic.notable_types → {m/05r4y_k}",
+              1.0
+            ],
+            [
+              "{m/010r041_} → common.topic.notable_for → {g.11bbqdm6bm}",
+              0.1111111111111111
+            ],
+            [
+              "{m/010r041_} → event.public_speaking_event.speech_presentation_discussion → {m/010r243f}",
+              0.1111111111111111
+            ],
+            [
+              "{m/010r041_} → time.event.locations → {m/0q4tg}",
+              0.1111111111111111
+            ],
+            [
+              "{m/010r041_} → common.topic.notable_for → {g.11bbqdm6bm} → food.fake_relation.noise → {m/01byc4}",
+              0.1111111111111111
+            ],
+            [
+              "{m/010r041_} → common.topic.notable_for → {g.11bbqdm6bm} ← common.topic.notable_for ← {m/010r041_}",
+              0.1111111111111111
+            ]
+          ],
+          "error": null,
+          "question": "Name the three schools attended by the speaker at the 70th Anniversary of the D-Day Normandy Invasion?",
+          "id": "WebQTrn-3110_2c9888f591cdea04f631b1f473bf1578",
+          "idx": 22
+        },
+        {
+          "success": false,
+          "hop": 3,
+          "entity_count": 4,
+          "relation_count": 9,
+          "early_stop": false,
+          "time": 306.25,
+          "pred_answer": "Egypt",
+          "gold_answer": "France",
+          "answer_in_graph": false,
+          "d_predict": 2,
+          "run_depth": 3,
+          "planning": {
+            "d_predict": 2,
+            "sub_questions": [
+              "What country on the Mediterranean Sea was a military combatant in the Gulf War?"
+            ],
+            "topic_entities_ordered": [
+              "m.04swx",
+              "m.01mp",
+              "m.018w0j"
+            ],
+            "indicator_text": "\"m.04swx\" - \"m.01mp\" - \"m.018w0j\" — toward: What country on the Mediterranean Sea was a military combatant in the Gulf War?",
+            "planning_text": "What country on the Mediterranean Sea was a military combatant in the Gulf War?",
+            "planning_source": "rule"
+          },
+          "phase_stats": [
+            {
+              "phase": "subgraph",
+              "nodes": 754,
+              "edges": 11233,
+              "elapsed": 0.49
+            },
+            {
+              "phase": "topic_path",
+              "depth": 2,
+              "raw_paths": 1538,
+              "pruned_paths": 3,
+              "sufficient": false,
+              "elapsed": 0.0
+            },
+            {
+              "phase": "topic_path",
+              "depth": 3,
+              "raw_paths": 108851,
+              "pruned_paths": 3,
+              "sufficient": true,
+              "elapsed": 0.21
+            }
+          ],
+          "top_paths_text": [
+            [
+              "{m/04swx} → location.location.partially_contains → {m/06mkj} ← military.casualties.combatant ← {m/09j_9mb}",
+              0.2222222222222222
+            ],
+            [
+              "{m/04swx} → location.location.contains → {m/0f0sbl} ← location.country.administrative_divisions ← {m/0f8l9c} → military.military_combatant.military_conflicts → {m/04yx9t3}",
+              0.2222222222222222
+            ],
+            [
+              "{m/04swx} → location.location.contains → {m/0f0sbl} ← location.country.administrative_divisions ← {m/0f8l9c} ← military.military_combatant.includes_allies ← {m/06v9sf}",
+              0.2222222222222222
+            ],
+            [
+              "{m/04swx} → location.location.contains → {m/0f0sbl} ← location.country.first_level_divisions ← {m/0f8l9c} → military.military_combatant.military_conflicts → {m/04yx9t3}",
+              0.2222222222222222
+            ],
+            [
+              "{m/04swx} → location.location.partially_contains → {m/0f8l9c} → military.military_combatant.belongs_to_combatant_group → {m/06v9sf}",
+              0.16666666666666666
+            ],
+            [
+              "{m/04swx} → location.location.partially_contains → {m/0f8l9c} ← military.military_combatant.includes_allies ← {m/06v9sf}",
+              0.16666666666666666
+            ]
+          ],
+          "error": null,
+          "question": "What country on the Mediterranean Sea was a military combatant in the Gulf War?",
+          "id": "WebQTrn-3322_eba7931ddf28af4dfa20fb099196c91f",
+          "idx": 23
+        },
+        {
+          "success": true,
+          "hop": 3,
+          "entity_count": 5,
+          "relation_count": 13,
+          "early_stop": false,
+          "time": 187.83,
+          "pred_answer": "American Civil War",
+          "gold_answer": "American Civil War",
+          "answer_in_graph": false,
+          "d_predict": 2,
+          "run_depth": 3,
+          "planning": {
+            "d_predict": 2,
+            "sub_questions": [
+              "What was the latest war did Stonewall Jackson fight in?"
+            ],
+            "topic_entities_ordered": [
+              "m.07r8h"
+            ],
+            "indicator_text": "\"m.07r8h\" — toward: What was the latest war did Stonewall Jackson fight in?",
+            "planning_text": "What was the latest war did Stonewall Jackson fight in?",
+            "planning_source": "rule"
+          },
+          "phase_stats": [
+            {
+              "phase": "subgraph",
+              "nodes": 22,
+              "edges": 763,
+              "elapsed": 0.04
+            },
+            {
+              "phase": "topic_path",
+              "depth": 2,
+              "raw_paths": 49,
+              "pruned_paths": 3,
+              "sufficient": false,
+              "elapsed": 0.0
+            },
+            {
+              "phase": "topic_path",
+              "depth": 3,
+              "raw_paths": 1474,
+              "pruned_paths": 3,
+              "sufficient": false,
+              "elapsed": 0.0
+            },
+            {
+              "phase": "supplement",
+              "predictions": 3,
+              "elapsed": 16.22
+            },
+            {
+              "phase": "node_expand",
+              "new_paths": 19,
+              "elapsed": 37.21
+            }
+          ],
+          "top_paths_text": [
+            [
+              "{m/07r8h} → people.person.education → {m/04hxhgp} → education.education.student → {m/07r8h}",
+              0.15384615384615385
+            ],
+            [
+              "{m/07r8h} → people.person.education → {m/04hxhgp} → education.education.institution → {m/07x4c}",
+              0.15384615384615385
+            ],
+            [
+              "{m/07r8h} → people.person.education → {m/04hxhgp} ← people.person.education ← {m/07r8h}",
+              0.15384615384615385
+            ],
+            [
+              "{m/07r8h} → people.person.education → {m/04hxhgp} → education.education.student → {m/07r8h} → visual_art.art_subject.artwork_on_the_subject → {m/0yp0gtc}",
+              0.15384615384615385
+            ],
+            [
+              "{m/07r8h} → people.person.education → {m/04hxhgp} → education.education.student → {m/07r8h} → people.person.parents → {m/0112ngpf}",
+              0.15384615384615385
+            ],
+            [
+              "{m/07r8h} → people.person.education → {m/04hxhgp} → education.education.student → {m/07r8h} → people.person.parents → {m/04zhtc}",
+              0.15384615384615385
+            ],
+            [
+              "{m/07r8h} → people.person.education → {m/04hxhgp} → education.education.student → {m/07r8h} → visual_art.art_subject.artwork_on_the_subject → {m/0yp0gtc} → common.topic.notable_for → {g.1ylqcrsxk}",
+              0.15384615384615385
+            ],
+            [
+              "{m/07r8h} → people.person.education → {m/04hxhgp} → education.education.student → {m/07r8h} → visual_art.art_subject.artwork_on_the_subject → {m/0yp0gtc} → common.topic.notable_types → {m/01y2hcq}",
+              0.15384615384615385
+            ],
+            [
+              "{m/07r8h} → people.person.education → {m/04hxhgp} → education.education.student → {m/07r8h} → visual_art.art_subject.artwork_on_the_subject → {m/0yp0gtc} ← location.location.contains ← {m/0mp3l}",
+              0.15384615384615385
+            ],
+            [
+              "{pseudo_start} → 07r8h → {pseudo_end}",
+              0.1
+            ]
+          ],
+          "error": null,
+          "question": "What was the latest war did Stonewall Jackson fight in?",
+          "id": "WebQTest-72_0425ff8e1789a850b9565fa90fd79979",
+          "idx": 24
+        },
+        {
+          "success": false,
+          "hop": 3,
+          "entity_count": 9,
+          "relation_count": 19,
+          "early_stop": false,
+          "time": 466.2,
+          "pred_answer": "The provided knowledge graph paths do not include specific data on the size of armies for NATO countries. Therefore, the question cannot be answered with the given information.",
+          "gold_answer": "Netherlands",
+          "answer_in_graph": false,
+          "d_predict": 2,
+          "run_depth": 3,
+          "planning": {
+            "d_predict": 2,
+            "sub_questions": [
+              "NATO countries have an army less than 111300 people?"
+            ],
+            "topic_entities_ordered": [
+              "m.059dn"
+            ],
+            "indicator_text": "\"m.059dn\" — toward: Which NATO countries have an army less than 111300 people?",
+            "planning_text": "NATO countries have an army less than 111300 people?",
+            "planning_source": "rule"
+          },
+          "phase_stats": [
+            {
+              "phase": "subgraph",
+              "nodes": 2114,
+              "edges": 24795,
+              "elapsed": 1.19
+            },
+            {
+              "phase": "topic_path",
+              "depth": 2,
+              "raw_paths": 2474,
+              "pruned_paths": 3,
+              "sufficient": false,
+              "elapsed": 0.0
+            },
+            {
+              "phase": "topic_path",
+              "depth": 3,
+              "raw_paths": 46094,
+              "pruned_paths": 3,
+              "sufficient": false,
+              "elapsed": 0.15
+            },
+            {
+              "phase": "supplement",
+              "predictions": 3,
+              "elapsed": 256.54
+            },
+            {
+              "phase": "node_expand",
+              "new_paths": 4,
+              "elapsed": 31.61
+            }
+          ],
+          "top_paths_text": [
+            [
+              "{m/059dn} → user.ktrueman.default_domain.international_organization.member_states → {m/06t8v} ← location.administrative_division.country ← {m/02gd9k} → location.administrative_division.country → {m/02_m04g}",
+              1.0
+            ],
+            [
+              "{m/059dn} → user.ktrueman.default_domain.international_organization.member_states → {m/06t8v} ← people.person.nationality ← {g.120s_7fb} ← military.military_conflict.military_personnel_involved ← {m/081pw}",
+              1.0
+            ],
+            [
+              "{m/059dn} → user.ktrueman.default_domain.international_organization.member_states → {m/06t8v} ← location.administrative_division.country ← {m/04w878} → location.administrative_division.country → {m/0_j82kd}",
+              1.0
+            ],
+            [
+              "{m/059dn} → user.ktrueman.default_domain.international_organization.member_states → {m/06t8v} ← people.place_lived.location ← {m/0wjxqhw}",
+              0.23076923076923078
+            ],
+            [
+              "{m/059dn} → user.ktrueman.default_domain.international_organization.member_states → {m/06t8v} ← people.person.nationality ← {m/0gv6cx}",
+              0.23076923076923078
+            ],
+            [
+              "{m/059dn} → user.ktrueman.default_domain.international_organization.member_states → {m/06t8v} ← people.person.nationality ← {g.12nvpqdy5}",
+              0.23076923076923078
+            ],
+            [
+              "{m/059dn} → user.ktrueman.default_domain.international_organization.member_states → {m/06t8v} ← people.person.nationality ← {m/0gv6cx} → tv.fake_relation.noise → {m/03m77q5}",
+              0.23076923076923078
+            ],
+            [
+              "{m/059dn} → user.ktrueman.default_domain.international_organization.member_states → {m/06t8v} ← location.administrative_division.country ← {m/02gd9k} ← people.sibling_relationship.sibling ← {m/0nfmsmn}",
+              0.23076923076923078
+            ],
+            [
+              "{m/059dn} → user.ktrueman.default_domain.international_organization.member_states → {m/06t8v} ← location.administrative_division.country ← {m/02gd9k} ← people.ethnicity.languages_spoken ← {m/072381}",
+              0.23076923076923078
+            ],
+            [
+              "{m/059dn} → user.ktrueman.default_domain.international_organization.member_states → {m/06t8v} ← people.person.nationality ← {m/0gv6cx} → tv.fake_relation.noise → {m/03m77q5} ← media_common.netflix_genre.titles ← {m/0jzc}",
+              0.23076923076923078
+            ]
+          ],
+          "error": null,
+          "question": "Which NATO countries have an army less than 111300 people?",
+          "id": "WebQTrn-2338_900bdf0c69647ca2f23ea2d6b7e66c14",
+          "idx": 25
+        }
+      ]
+    }
+  }
+}

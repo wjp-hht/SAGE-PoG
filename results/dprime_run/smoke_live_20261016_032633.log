@@ -1,0 +1,173 @@
+[1/5] 导入系统模块...
+[OK] 模块导入成功
+======================================================================
+PoG 四组对比实验
+======================================================================
+数据集    : experiment_questions.json
+采样数量  : 5 条，策略=balanced_by_compositionality
+最大跳数  : 3
+快速模式  : 关（使用LLM）
+LLM模式   : 关系筛选=True，知识判断=True
+Planning  : 规则
+启用组    : ['A_原始PoG', 'C_仅知识判断', 'D_双模块全开', 'D_prime_判断不停']
+======================================================================
+
+[2/5] 检查 SPARQL / KG 连接...
+
+[KG] 正在加载图谱: military_kg_group1.nt
+[KG] (抑制rdflib日期解析警告...)
+[KG] 加载成功: 326774 条三元组
+[OK] rdflib 本地KG已加载
+
+[3/5] 加载数据集...
+[OK] 总=100  有效=100  使用=5
+[ID示例] 原始: m.034rd  修复后: m/034rd
+[样本分布] {'comparative': 2, 'composition': 1, 'conjunction': 1, 'superlative': 1}
+
+[4/5] 开始运行实验...
+
+[续跑] 未设置或不存在 POG_RESUME_CACHE，将完整跑全部题目
+[超时] 单题超时 = 1500s ；超时记为 TIMEOUT 并继续下一题
+======================================================================
+实验组: A_原始PoG  |  完整 PoG 流程（论文一致）；两改进模块均关闭
+----------------------------------------------------------------------
+[配置] enable_relation_filter = False
+[配置] enable_knowledge_judge = False
+[配置] use_llm_filter = False
+[配置] use_llm_judge = False
+[配置] relation_filter_k = 10
+[配置] relation_filter_threshold = 15
+[配置] min_evidence_threshold = 8
+[配置] max_evidence_threshold = 50
+[配置] min_relation_types = 4
+[配置] min_depth_before_stop = 2
+[配置] no_stop = False
+  [001/5] Which battles in the war in which George Washington is associated
+
+[PoG] ========== 开始探索 ==========
+[PoG] Topic entities: ['m/034rd']
+[PoG] Max depth: 3
+[PoG] Topic 实体名: m/034rd
+
+[PoG] Phase 1: 构建 3 跳子图...
+[PoG] 子图构建完成: 7716 个已展开节点, 168899 条边, 93892 个实体, 耗时 2.50s
+
+[PoG] Phase 2a: Topic Entity 路径探索...
+[PoG]   深度 2: 发现 18643 条候选路径 (0.03s)
+[PoG] SBERT 不可用，Fuzzy Selection 使用关键词匹配兜底
+[LLM] qwen3:32b 响应完成
+[PoG]   深度 2: 剪枝后 3 条路径
+[LLM] qwen3:32b 响应完成
+[PoG]   深度 3: 发现 4575734 条候选路径 (19.23s)
+[LLM] qwen3:32b 响应完成
+[PoG]   深度 3: 剪枝后 3 条路径
+[LLM] qwen3:32b 响应完成
+
+[PoG] Phase 2b: LLM 补充路径探索...
+[LLM] qwen3:32b 响应完成
+[PoG]   LLM 预测 3 个候选中间实体
+[PoG]   候选 'Battle of Germantown' 未在子图中找到，跳过
+[PoG]   候选 'Battle of Monmouth' 未在子图中找到，跳过
+[PoG]   候选 'Siege of Yorktown' 未在子图中找到，跳过
+
+[PoG] Phase 2c: 节点扩展探索（循环到Dmax）...
+[PoG]   Node Expand 第1轮：无新路径，停止扩展
+[PoG]   节点扩展共发现 0 条新路径
+
+[PoG] 图4分支: LLM伪路径补充...
+[LLM] qwen3:32b 响应完成
+[PoG] LLM伪路径补充：生成 3 条
+
+[PoG] ========== 探索完毕 ==========
+[PoG] 答案命中: N  早停: N  路径: 9  实体: 93892  总耗时: 243.01s
+[LLM] qwen3:32b 响应完成
+[LLM] qwen3:32b 响应完成
+[LLM] qwen3:32b 响应完成
+         [LLM答案/PoG链] 'none'  [标准答案] ['Battle of the Clouds', 'American Revolutionary War', 'Battle of White Marsh', 'Yorktown campaign', 'Battle of Germantown', 'Treaty of Alliance', 'Philadelphia campaign', 'Battle of Monmouth', 'Siege of Yorktown', 'Quasi-War']  [命中] N
+         -> 跳数=3  实体=6  关系=13  耗时=327.33s  成功=N
+  [002/5] What countries border a military combatant involved in the Battle
+
+[PoG] ========== 开始探索 ==========
+[PoG] Topic entities: ['m/01975w', 'm/01mp']
+[PoG] Max depth: 3
+[PoG] Topic 实体名: m/01975w, m/01mp
+
+[PoG] Phase 1: 构建 3 跳子图...
+[PoG] 子图构建完成: 18057 个已展开节点, 153745 条边, 75007 个实体, 耗时 1.93s
+
+[PoG] Phase 2a: Topic Entity 路径探索...
+[PoG]   深度 2: 发现 25271 条候选路径 (0.04s)
+[LLM] qwen3:32b 响应完成
+[PoG]   深度 2: 剪枝后 3 条路径
+[LLM] qwen3:32b 响应完成
+[PoG]   深度 3: 发现 6651325 条候选路径 (25.09s)
+[LLM] qwen3:32b 响应完成
+[PoG]   深度 3: 剪枝后 3 条路径
+[LLM] qwen3:32b 响应完成
+
+[PoG] Phase 2b: LLM 补充路径探索...
+[LLM] qwen3:32b 响应完成
+[PoG]   LLM 预测 3 个候选中间实体
+[PoG]   候选 'Russia' 未在子图中找到，跳过
+[PoG]   候选 'Ukraine' 未在子图中找到，跳过
+[PoG]   候选 'Kazakhstan' 未在子图中找到，跳过
+
+[PoG] Phase 2c: 节点扩展探索（循环到Dmax）...
+[PoG]   Node Expand 第1轮：发现 5 条新路径
+[PoG]   Node Expand：路径长度达到 Dmax(3)，停止
+[PoG]   节点扩展共发现 5 条新路径
+[LLM] qwen3:32b 响应完成
+[LLM] qwen3:32b 响应完成
+
+[PoG] 图4分支: LLM伪路径补充...
+[LLM] qwen3:32b 响应完成
+[PoG] LLM伪路径补充：生成 3 条
+
+[PoG] ========== 探索完毕 ==========
+[PoG] 答案命中: N  早停: N  路径: 12  实体: 75007  总耗时: 397.56s
+[LLM] qwen3:32b 响应完成
+[LLM] qwen3:32b 响应完成
+[LLM] qwen3:32b 响应完成
+         [LLM答案/PoG链] 'Russia'  [标准答案] ['Belarus', 'Estonia', 'Finland', 'Kazakhstan', 'Latvia', 'Lithuania', 'Mongolia', 'Norway', 'North Korea', 'Poland', 'Ukraine', 'China', 'Georgia', 'Azerbaijan']  [命中] N
+         -> 跳数=3  实体=8  关系=15  耗时=562.1s  成功=N
+  [003/5] What country was involved in the Battle of Talavera and borders S
+
+[PoG] ========== 开始探索 ==========
+[PoG] Topic entities: ['m/06mkj', 'm/01mp', 'm/03jyvj']
+[PoG] Max depth: 3
+[PoG] Topic 实体名: m/06mkj, m/01mp, m/03jyvj
+
+[PoG] Phase 1: 构建 3 跳子图...
+[PoG] 子图构建完成: 24836 个已展开节点, 251513 条边, 125657 个实体, 耗时 3.03s
+
+[PoG] Phase 2a: Topic Entity 路径探索...
+[PoG]   深度 2: 发现 38343 条候选路径 (0.07s)
+[LLM] qwen3:32b 响应完成
+[PoG]   深度 2: 剪枝后 2 条路径
+[LLM] qwen3:32b 响应完成
+[PoG]   深度 2: QA 评估 → 充足! 答案: France. The Battle of Talavera involved France as a combatant, and France shares
+
+[PoG] ========== 探索完毕 ==========
+[PoG] 答案命中: Y  早停: N  路径: 2  实体: 125657  总耗时: 130.81s
+[LLM] qwen3:32b 响应完成
+[LLM] qwen3:32b 响应完成
+[LLM] qwen3:32b 响应完成
+         [LLM答案/PoG链] 'France'  [标准答案] ['France']  [命中] Y
+         -> 跳数=2  实体=2  关系=3  耗时=210.35s  成功=Y
+  [004/5] What is the country with the largest army and is where Cuban Miss
+
+[PoG] ========== 开始探索 ==========
+[PoG] Topic entities: ['m/01zxx']
+[PoG] Max depth: 3
+[PoG] Topic 实体名: m/01zxx
+
+[PoG] Phase 1: 构建 3 跳子图...
+[PoG] 子图构建完成: 7949 个已展开节点, 123716 条边, 68208 个实体, 耗时 1.18s
+
+[PoG] Phase 2a: Topic Entity 路径探索...
+[PoG]   深度 3: 发现 239143 条候选路径 (0.37s)
+[LLM] qwen3:32b 响应完成
+[PoG]   深度 3: 剪枝后 3 条路径
+[LLM] qwen3:32b 响应完成
+
+[PoG] Phase 2b: LLM 补充路径探索...

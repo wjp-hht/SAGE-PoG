@@ -1,0 +1,12 @@
+# Runtime dependencies of the evaluation code.
+#
+# Required for the main experiment (experiments/, src/):
+numpy
+tqdm
+requests
+rdflib
+sentence-transformers
+urllib3
+
+# Required only for regenerating the figures (make_figures_en.py):
+matplotlib
