@@ -1,13 +1,16 @@
 # SAGE-PoG: Efficient Multi-hop Graph Reasoning via Semantic Pre-filtering with Sufficiency-Aware Fallback
 
-Reference implementation and derived results for the paper submitted to
-*Journal of King Saud University - Computer and Information Sciences*.
+Reference implementation and derived results for the SAGE-PoG manuscript.
+The manuscript is currently under review; bibliographic details will be added
+here once it is published.
 
 ## What this repository contains
 
 | Path | Contents |
 |---|---|
-| `src/` | Core implementation: PoG pipeline, LLM calling layer with HTTP/token/retry instrumentation, Freebase helpers |
+| `src/` | Core implementation: PoG pipeline, the two pluggable modules (`pog_improvements.py`: relation Top-K pre-filtering and knowledge-sufficiency early stopping), LLM calling layer with HTTP/token/retry instrumentation, Freebase helpers |
+| `run_experiment.py` | Driver for the four-group ablation (A/B/C/D) reported in the paper |
+| `rebuild_military_kg.py` | Domain subgraph construction (N-Triples output) |
 | `experiments/` | Launch scripts for the three main batches (G1/G2/G3) and the K / d_min sensitivity sweeps |
 | `analysis/` | Result aggregation and figure generation |
 | `configs/` | Configuration (hyper-parameters and paths) |
